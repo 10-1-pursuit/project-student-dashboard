@@ -1,3 +1,5 @@
+[Live Site](https://chimerical-shortbread-d110bd.netlify.app/)
+
 # Student Dashboard Project
 
 For this assignment, you will build a student dashboard that will make use of already existing data stored in a JSON file. Users will be able to view students in several ways as well as add comments to those students.
