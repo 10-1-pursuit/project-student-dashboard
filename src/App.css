@@ -1,4 +1,4 @@
-
+*{margin:0}
 header {
     background: var(--dark);
     border-bottom: 3px solid var(--primary);
@@ -6,6 +6,7 @@ header {
     padding: 25px 0;
     text-align: center;
     background-color: rgb(47, 255, 161);
+    width: auto;
   }
   
   header h1 {
@@ -29,8 +30,23 @@ header {
   .container {
     display: grid;
     gap: 25px;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     margin: 25px auto;
-    width: 60%;
+    width: max-content;
   }
-  
+ p.student-name{color: red;text-align: center;display: inline;;
+    
+    ;margin: 25px auto;
+    width: fit-content;}   
+
+    /* div.layout{display: inline;
+        gap: 25px;
+        grid-template-columns: 1fr 1fr;
+        margin: 25px auto;
+        width: 60%;
+    } */
+
+    section#Student-Card{border: 2px solid red;width:fit-content}
+
+
+    div.layout{border:2px solid black;grid-template-columns: 1fr 1fr;display: grid; width:fit-content}
