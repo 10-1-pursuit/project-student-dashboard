@@ -22,3 +22,15 @@ header {
   header p {
     font-style: italic;
   }
+
+
+  li{list-style: none;}
+
+  .container {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: 1fr 2fr;
+    margin: 25px auto;
+    width: 60%;
+  }
+  
