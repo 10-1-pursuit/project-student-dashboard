@@ -1,9 +1,22 @@
-
+import TopBar from "./TopBar";
+import  "./App.css"
 function App() {
   return (
-    <div>
-      <h1>Student Dashboard</h1>
-    </div>
+    <>
+      <TopBar/>
+      <main>
+          <section></section>
+          <secttion></secttion>
+
+
+
+      </main>
+    
+    
+    
+    
+    
+    </>
   );
 }
 
