@@ -2,6 +2,9 @@ import { useState } from 'react';
 
     const StudentProfile = ({ student }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [oneOnOneNotes, setOneOnOneNotes] = useState(student.notes);
+    const [commenterName, setCommenterName] = useState('');
+    const [comment, setComment] = useState('');
 
     const toggleDetails = () => {
       setIsOpen(!isOpen);
@@ -9,6 +12,17 @@ import { useState } from 'react';
 
     const calculatePercentage = (current, goal) => {
         return ((current / goal) * 100).toFixed(2);
+    }
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        const newNote = {
+            commenter: commenterName,
+            comment: comment
+        }
+        setOneOnOneNotes([...oneOnOneNotes, newNote]);
+        setCommenterName('');
+        setComment('');
     }
 
     const calculateOnTrackStatus = (student) => {
@@ -25,6 +39,14 @@ import { useState } from 'react';
           hasMockInterviewCertification &&
           currentCodeWarsScore > 600
         )
+      }
+
+      const formatCommenterName = (name) => {
+        const names = name.split(' ');
+        const firstName = names[0].charAt(0).toUpperCase() + names[0].slice(1).toLowerCase();
+        const lastName = names[names.length - 1].charAt(0).toUpperCase() + '.';
+
+        return firstName + ' ' + lastName;
       }
   
     return (
@@ -53,6 +75,39 @@ import { useState } from 'react';
                 <p>LinkedIn: {student.certifications.linkedin ? '✅' : '❌'}</p>
                 <p>Github: {student.certifications.github ? '✅' : '❌'}</p>
                 <p>Mock Interview: {student.certifications.mockInterview ? '✅' : '❌'}</p>
+
+                <h3>1-on-1 Notes</h3>
+                <form onSubmit={handleFormSubmit}>
+                    <label>
+                        Commenter Name:
+                        <input
+                        type='text'
+                        value={commenterName}
+                        onChange={(e) => setCommenterName(e.target.value)}
+                        />
+                    </label>
+                    <label>
+                        Comment:
+                        <input
+                        type='text'
+                        value={comment}
+                        onChange={(e) => setComment(e.target.value)}
+                        />
+                    </label>
+                    <button type="submit">Add Note</button>
+                </form>
+
+                <h3>Previous Notes</h3>
+                <ul>
+                    {oneOnOneNotes.map((note, index) => {
+                        return (
+                        <li key={index}>
+                        <span>{formatCommenterName(note.commenter)} says, </span>
+                        <span>"{note.comment}"</span>
+                        </li>
+                        )
+                    })}
+                </ul>
             </div>
         )}
 
