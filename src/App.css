@@ -57,3 +57,11 @@ header {
       }
 
       div#table{border:2px solid pink}
+
+      table, th, td {
+        border: 1px solid black;
+      }
+
+      th.top1{background-color: red;}
+      th.top2{background-color:orange;}
+        th.top3{background-color:navajowhite;}

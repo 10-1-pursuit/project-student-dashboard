@@ -17,7 +17,7 @@ function App() {
       <TopBar/>
       <main className="container">
           <section id="Student-List" ><StudentList/></section>
-          <section id="Student-Card"><StudentCards/></section>
+          <section key="card"id="Student-Card"><StudentCards key=""/></section>
 
 
 

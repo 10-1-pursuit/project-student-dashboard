@@ -1,3 +1,4 @@
+import { useState } from "react"
 import data from "../src/data/data.json"
 
 
@@ -6,10 +7,30 @@ import data from "../src/data/data.json"
 function StudentCards() {
 
     const studentsToRender = data.map((eachStudent) => {
+        // const[ifTrue,setIfTrue]=useState(false)
+
+        const[hasIt,SetHasIt]=useState("✅");
+        const[doesntHaveIt,SetDoenstHaveIt]=useState("❌")
+
+        // // console.log(ifTrue)
+
+        // if(ifTrue===eachStudent.certifications.linkedin){
+        //     setIfTrue("❌")
+
+           
+        // }
+
+        // if(eachStudent.certifications.linkedin==="false"){
+
+        //     return(<>❌</>);
+
+
+        // }
+
         return (
             <div className="layout">
 
-                <section><img src={eachStudent.profilePhoto} /></section>
+                <section key={eachStudent.id}><img src={eachStudent.profilePhoto} /></section>
 
                 <section><p className="student-name"> {eachStudent.names.preferredName}  {eachStudent.names.middleName} {eachStudent.names.surname}</p>
                     <p>{eachStudent.username}</p>
@@ -20,34 +41,34 @@ function StudentCards() {
 
                     <a>ShowMore.....</a>
 
-                    <div id="table" hidden="hidden"><table>
-                        <th>CodeWars</th>
-                        <th></th>
-                        <th>Scores</th>
-                        <th></th>
-                        <th>Certifications</th>
+                    <div id="table"><table>
+                        <th className="top1">CodeWars</th>
+                        
+                        <th className="top2">Scores</th>
+                        
+                        <th className="top3">Certifications</th>
                         <tbody>
                             <tr>
-                                <td>CurrentTotal</td> <td></td>
-                                <td>Assignments</td>
-                                <td></td>
-                                <td>Resume</td>
-                            </tr>
-                            <tr><td>LastWeek</td> <td></td>
-                                <td>Project</td>
-                                <td></td>
-                                <td>LinkedIn</td></tr>
-                            <tr><td>Goal</td> <td></td>
-                                <td>Assesment</td>  <td></td>
+                                <td>CurrentTotal:{eachStudent.codewars.current.total}%</td>
+                                <td>Assignments:{eachStudent.cohort.scores.assignments}%</td>
                                 
-                                <td>Mock Interview</td></tr>
-                            <tr><td>Percent Of Goal Achieved</td>
-                                <td></td>  
-                                <td>GitHub</td>
+                                <td>Resume:{hasIt}</td>
                             </tr>
+                            <tr><td>LastWeek:{eachStudent.codewars.current.lastWeek}</td> 
+                                <td>Projects:{eachStudent.cohort.scores.projects}%</td>
+                                
+                                <td>LinkedIn :{hasIt}</td></tr>
+                            <tr><td>Goal:{eachStudent.codewars.goal.total}</td> 
+                                <td>Assesment:{eachStudent.cohort.scores.assessments}%</td>  
+                                
+                                <td>Mock Interview:{doesntHaveIt}</td></tr>
+                            
                         </tbody>
+                        
 
                     </table></div>
+
+                    <p>Percent of Goal <br></br>GitHub:{doesntHaveIt}</p>
                 </section>
 
 
