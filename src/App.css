@@ -29,10 +29,10 @@ header {
 
   .container {
     display: grid;
-    gap: 25px;
+    /* gap: 25px; */
     grid-template-columns: 1fr 1fr;
     margin: 25px auto;
-    width: max-content;
+    width: fit-content;
   }
  p.student-name{color: red;text-align: center;display: inline;;
     
@@ -47,6 +47,13 @@ header {
     } */
 
     section#Student-Card{border: 2px solid red;width:fit-content}
+    section#Student-List{max-width: 200;}
 
 
     div.layout{border:2px solid black;grid-template-columns: 1fr 1fr;display: grid; width:fit-content}
+
+    th, td {
+        padding: 15px;
+      }
+
+      div#table{border:2px solid pink}

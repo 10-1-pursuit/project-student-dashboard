@@ -16,7 +16,7 @@ function App() {
     <>
       <TopBar/>
       <main className="container">
-          <section ><StudentList/></section>
+          <section id="Student-List" ><StudentList/></section>
           <section id="Student-Card"><StudentCards/></section>
 
 
