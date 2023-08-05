@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import OneOnOneSection from "./OneOnOneSection.jsx";
 import "./StudentCard.css"
 
 const isOnTrack = (student) => {
@@ -13,12 +14,35 @@ const isOnTrack = (student) => {
 }
 
 
-const StudentCard = ({ student }) => {
-    const [showDetails, setShowDetails] = useState(false)
-    const toggleDetails = (event) => {
+const StudentCard = ({ student, addNote }) => {
+    const [commenter, setCommenter] = useState("")
+    const [comment, setComment] = useState("")
+    const [notes, setNotes] = useState([])
+    const [expandedState, setExpandedState] = useState({});
+
+    const handleCommenterChange = event => setCommenter(event.target.value)
+    const handleCommentChange = event => setComment(event.target.value)
+
+    const handleSubmit = event => {
         event.preventDefault()
-        setShowDetails(!showDetails)
+        if (commenter.trim() === "" || comment.trim() === "") return;
+        addNote(student.id, commenter, comment)
+
+        const newNote = { commenter, comment }
+        setNotes([...notes, newNote])
+        setCommenter("")
+        setComment("")
     }
+
+    const toggleExpanded = (event) => {
+        event.preventDefault()
+        setExpandedState((prevState) => ({
+            ...prevState,
+            [student.id]: !prevState[student.id]
+        }));
+    };
+
+    const isExpanded = expandedState[student.id]
     const onTrack = isOnTrack(student)
     return (
         <div key={student.id} className={`student-card ${onTrack ? "on-track" : "off-track"}`}>
@@ -26,14 +50,14 @@ const StudentCard = ({ student }) => {
                 <img src={student.profilePhoto} alt={student.names.preferredName} />
             </div>
             <div>
-                <h2>{`${student.names.preferredName} ${student.names.middleName} ${student.names.surname}`}</h2>
+                <h3>{`${student.names.preferredName} ${student.names.middleName} ${student.names.surname}`}</h3>
                 <p>{student.username}</p>
                 <p>{student.dob}</p>
                 <p>Status: {onTrack ? "On Track" : "Off Track"}</p>
-                <a href="#" onClick={event => toggleDetails(event)}>
-                    {showDetails ? "Show Less..." : "Show More..."}
+                <a href="#" onClick={event => toggleExpanded(event)}>
+                    {isExpanded ? "Show Less..." : "Show More..."}
                 </a>
-                {showDetails && (
+                {isExpanded && (
                     <div className="additional-details">
                         <div className="column">
                             <h3>Codewars</h3>
@@ -55,6 +79,15 @@ const StudentCard = ({ student }) => {
                             <p>Mock Interview: {student.certifications.mockInterview ? "✅" : "❌"}</p>
                             <p>GitHub: {student.certifications.github ? "✅" : "❌"}</p>
                         </div>
+                        <OneOnOneSection
+                            student={student}
+                            commenter={commenter}
+                            comment={comment}
+                            handleCommentChange={handleCommentChange}
+                            handleSubmit={handleSubmit}
+                            notes={notes}
+                            handleCommenterChange={handleCommenterChange}
+                        />
                     </div>
                 )}
             </div>
