@@ -4,17 +4,18 @@ import data from "../src/data/data.json"
 
 
 
-function StudentCardsFall26() {
+function StudentCardsSpring26() {
   
 
     const studentsToRender = data.map((eachStudent) => {
         
         // const[ifTrue,setIfTrue]=useState(false)
 
+        const[show,SetShow]=useState('true')
         const[hasIt,SetHasIt]=useState("✅");
         const[doesntHaveIt,SetDoenstHaveIt]=useState("❌")
 
-        if(eachStudent.cohort.cohortCode==="Winter2026")
+        if(eachStudent.cohort.cohortCode === "Spring2026")
        
 
         // // console.log(ifTrue)
@@ -53,9 +54,11 @@ function StudentCardsFall26() {
                     <br>
                     </br>
                     <br></br>
+                    <div>
 
-                    <a>ShowMore.....</a>
-
+                    <a><button onClick={()=>SetShow(!show)}>ShowMore.....</button></a>
+                    <a><button onClick={()=>SetShow(!show)}>ShowLess.....</button></a>
+                {show && (
                     <div id="table"><table id ={eachStudent.id}>
                         <th className="top1">CodeWars</th>
                         
@@ -81,7 +84,7 @@ function StudentCardsFall26() {
                         </tbody>
                         
 
-                    </table></div>
+                    </table></div>)}</div>
 
                     <p>Percent of Goal <br></br>GitHub:{doesntHaveIt}</p>
                 </section>
@@ -93,9 +96,9 @@ function StudentCardsFall26() {
             </div>);
     })
 
-    return (<div class="winter2026" hidden="hidden"> {studentsToRender}</div>);
+    return (<div class="spring2026"hidden="hidden" > {studentsToRender}</div>);
 
 }
 
 
-export default StudentCardsFall26
+export default StudentCardsSpring26

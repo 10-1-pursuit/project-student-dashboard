@@ -4,7 +4,7 @@ import data from "../src/data/data.json"
 
 
 
-function StudentCardsFall26() {
+ function StudentCardsAll() {
   
 
     const studentsToRender = data.map((eachStudent) => {
@@ -14,7 +14,7 @@ function StudentCardsFall26() {
         const[hasIt,SetHasIt]=useState("✅");
         const[doesntHaveIt,SetDoenstHaveIt]=useState("❌")
 
-        if(eachStudent.cohort.cohortCode==="Winter2026")
+        
        
 
         // // console.log(ifTrue)
@@ -93,9 +93,9 @@ function StudentCardsFall26() {
             </div>);
     })
 
-    return (<div class="winter2026" hidden="hidden"> {studentsToRender}</div>);
+    return (<div class="all-students" hidden="hidden">{studentsToRender}</div>);
 
 }
 
 
-export default StudentCardsFall26
+export default StudentCardsAll

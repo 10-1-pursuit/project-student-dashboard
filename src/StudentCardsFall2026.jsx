@@ -1,5 +1,5 @@
 import { useState } from "react"
-import data from "../src/data/data.json"
+import data from "./data/data.json"
 
 
 
@@ -14,7 +14,7 @@ function StudentCardsFall26() {
         const[hasIt,SetHasIt]=useState("✅");
         const[doesntHaveIt,SetDoenstHaveIt]=useState("❌")
 
-        if(eachStudent.cohort.cohortCode==="Winter2026")
+        if(eachStudent.cohort.cohortCode==="Fall2026")
        
 
         // // console.log(ifTrue)
@@ -93,7 +93,7 @@ function StudentCardsFall26() {
             </div>);
     })
 
-    return (<div class="winter2026" hidden="hidden"> {studentsToRender}</div>);
+    return (<div  class="fall2026" hidden="hidden"  > {studentsToRender}</div>);
 
 }
 

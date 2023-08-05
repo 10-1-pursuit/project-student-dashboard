@@ -1,20 +1,37 @@
 import { useState } from "react"
 import data from "../src/data/data.json"
 
+// const ShowCard=()=>{
+//     const myDiv=document.querySelector("table")
+//     const myDivId=document.querySelector('table').id
+//     const Show=data.map((el)=>{
+//         if(el.id){
+//             myDiv.removeAttribute("hidden")
+//         }
+//         return Show
+    
+        
+//     })
+    
+    
+    
+    
+//     }
 
-
-
-function StudentCardsFall26() {
+function StudentCardsSpring25() {
+    
   
 
     const studentsToRender = data.map((eachStudent) => {
         
         // const[ifTrue,setIfTrue]=useState(false)
+        const myDiv=document.querySelector("table")
 
         const[hasIt,SetHasIt]=useState("✅");
         const[doesntHaveIt,SetDoenstHaveIt]=useState("❌")
+        const[show,SetShow]=useState(true)
 
-        if(eachStudent.cohort.cohortCode==="Winter2026")
+        if(eachStudent.cohort.cohortCode === "Spring2025")
        
 
         // // console.log(ifTrue)
@@ -43,6 +60,7 @@ function StudentCardsFall26() {
 
         return (
             <div className="layout">
+                
 
                 <section key={eachStudent.id}><img src={eachStudent.profilePhoto} /></section>
 
@@ -53,10 +71,11 @@ function StudentCardsFall26() {
                     <br>
                     </br>
                     <br></br>
+                  
 
-                    <a>ShowMore.....</a>
+                    <a ><button type="button" onClick="">ShowMore.....</button></a>
 
-                    <div id="table"><table id ={eachStudent.id}>
+                    <div id={eachStudent.id}><table id ={eachStudent.id}>
                         <th className="top1">CodeWars</th>
                         
                         <th className="top2">Scores</th>
@@ -93,9 +112,9 @@ function StudentCardsFall26() {
             </div>);
     })
 
-    return (<div class="winter2026" hidden="hidden"> {studentsToRender}</div>);
+    return (<div class="spring2025" hidden="hidden"> {studentsToRender}</div>);
 
 }
 
 
-export default StudentCardsFall26
+export default StudentCardsSpring25

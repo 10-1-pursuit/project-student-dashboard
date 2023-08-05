@@ -1,10 +1,10 @@
 import { useState } from "react"
-import data from "../src/data/data.json"
+import data from "./data/data.json"
 
 
 
 
-function StudentCardsFall26() {
+function StudentCardsSummer25() {
   
 
     const studentsToRender = data.map((eachStudent) => {
@@ -14,7 +14,7 @@ function StudentCardsFall26() {
         const[hasIt,SetHasIt]=useState("✅");
         const[doesntHaveIt,SetDoenstHaveIt]=useState("❌")
 
-        if(eachStudent.cohort.cohortCode==="Winter2026")
+        if(eachStudent.cohort.cohortCode==="Summer2025")
        
 
         // // console.log(ifTrue)
@@ -93,9 +93,9 @@ function StudentCardsFall26() {
             </div>);
     })
 
-    return (<div class="winter2026" hidden="hidden"> {studentsToRender}</div>);
+    return (<div  class="summer2025" hidden="hidden" > {studentsToRender}</div>);
 
 }
 
 
-export default StudentCardsFall26
+export default StudentCardsSummer25
