@@ -1,12 +1,13 @@
 import StudentProfile from "./StudentProfile";
 import data from '../data/data.json';
-import { useState } from "react";
+import FormatCohortNames from './FormatCohortNames'
 
-const StudentDashboard = () => {
+const Home = () => {
     const studentsData = data;
 
     return (
         <div>
+          <FormatCohortNames studentsData={studentsData} />
         <h1>Student Dashboard</h1>
         <p>Total Students: {studentsData.length}</p>
       <ul>
@@ -18,4 +19,4 @@ const StudentDashboard = () => {
     )
 }
 
-export default StudentDashboard;
+export default Home;

@@ -1,9 +1,9 @@
 import React from 'react';
-import StudentDashboard from './Components/StudentDashboard';
+import Home from './Components/Home';
 
 function App() {
   
-  return <StudentDashboard />
+  return <Home />
 }
 
 export default App;
