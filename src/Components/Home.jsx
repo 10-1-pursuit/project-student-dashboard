@@ -16,6 +16,11 @@ const Home = () => {
         <div>
           <FormatCohortNames studentsData={studentsData} setSelectedCohort={setSelectedCohort}/>
         <h1>Student Dashboard</h1>
+        {selectedCohort ? (
+          <h2>{formatCohortCode(selectedCohort)}</h2>
+        ) : (
+          <h2>All Students</h2>
+        )}
         <p>Total Students: {filteredStudents.length}</p>
       <ul>
         {filteredStudents.map((student) => (
