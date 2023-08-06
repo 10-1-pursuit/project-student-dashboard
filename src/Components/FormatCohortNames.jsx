@@ -1,13 +1,19 @@
-const FormatCohortNames = ({ studentsData }) => {
-    const formatCohortCode = (cohortCode) => {
-      if (cohortCode.includes(' ')) {
-        return cohortCode;
-      }
-  
-      const season = cohortCode.slice(0, -4);
-      const year = cohortCode.slice(-4);
-      return `${season} ${year}`;
-    };
+export const formatCohortCode = (cohortCode) => {
+    if (cohortCode.includes(' ')) {
+      return cohortCode;
+    }
+
+    const season = cohortCode.slice(0, -4);
+    const year = cohortCode.slice(-4);
+    return `${season} ${year}`;
+  };
+
+const FormatCohortNames = ({ studentsData, setSelectedCohort }) => {
+
+    const handleCohortClick = (cohortCode) => {
+        console.log("Clicked Cohort:", cohortCode);
+        setSelectedCohort(cohortCode);
+      };
   
     const sortedCohortCodes = [];
     studentsData.forEach((student) => {
@@ -24,20 +30,32 @@ const FormatCohortNames = ({ studentsData }) => {
         const yearA = parseInt(a.slice(-4));
         const yearB = parseInt(b.slice(-4));
 
-        if (seasonOrder[seasonA] !== seasonOrder[seasonB]) {
-            return seasonOrder[seasonA] - seasonOrder[seasonB];
+        if (seasonOrder.indexOf(seasonA) !== seasonOrder.indexOf(seasonB)) {
+            return seasonOrder.indexOf(seasonA) - seasonOrder.indexOf(seasonB);
         } else {
             return yearB - yearA
         }
     })
   
+        console.log(sortedCohortCodes)
+
+        const handleAllStudentsClick = () => {
+            setSelectedCohort("");
+          };
+      
+
     return (
       <div>
         <h3>Choose a class by Start Date</h3>
         <ul>
-          {sortedCohortCodes.map((cohortCode) => {
-            return <li key={cohortCode}>{formatCohortCode(cohortCode)}</li>;
-          })}
+        <li onClick={handleAllStudentsClick} style={{ cursor: "pointer" }}>
+          All Students
+        </li>
+          {sortedCohortCodes.map((cohortCode) => (
+            <li key={cohortCode} onClick={() => handleCohortClick(cohortCode)} style={{ cursor: "pointer" }}>
+                {formatCohortCode(cohortCode)}
+                </li>
+          ))}
         </ul>
       </div>
     );
