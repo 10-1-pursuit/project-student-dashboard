@@ -1,9 +1,23 @@
 import data from "./data/data.json"
-
+import { useState } from "react"
 //console.log(data)
+
+
+
+
 
 function App() {
   const totalofAllStudents = data.length
+  const[seeStudentCardDetails, setSeeStudentCardDetails]=useState(false)
+  const[textForSeeMoreOrLessDetails, setTextForSeeMoreOrLessDetails] = useState("See More...")
+   
+  function handleSeeMoreOrLessDetailsToggle(){
+    setSeeStudentCardDetails(!seeStudentCardDetails)
+      if(seeStudentCardDetails === false){
+        setTextForSeeMoreOrLessDetails("See More...")
+      } else{
+        setTextForSeeMoreOrLessDetails("See Less...")
+      }}
 
   const studentListForHomePage = data.map(
     (eachStudentToListObj)=>{
@@ -12,8 +26,9 @@ function App() {
         <h3>{eachStudentToListObj.names.preferredName} {eachStudentToListObj.names.middleName.charAt(0)}. {eachStudentToListObj.names.surname}</h3>
         <h4>{eachStudentToListObj.username}</h4>
         <h4>{eachStudentToListObj.dob}</h4>
-        <a>See More...</a>
-      </div>)
+        <a onClick={(synthEvent)=>{handleSeeMoreOrLessDetailsToggle()}} >{textForSeeMoreOrLessDetails}</a>
+      </div>
+      )
     }
   )
 
