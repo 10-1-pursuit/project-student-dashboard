@@ -1,0 +1,11 @@
+header {
+    background-color: blue;
+    padding: 1rem
+}
+
+h1{
+    color: antiquewhite;
+    font-family: sans-serif;
+    cursor: pointer;
+    text-align: center;
+}
