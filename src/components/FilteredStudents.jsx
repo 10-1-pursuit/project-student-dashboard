@@ -1,6 +1,6 @@
 import React from "react"
-import "./components/filteredStudents.css"
-import StudentCard from "./components/StudentCard.jsx"
+import "./filteredStudents.css"
+import StudentCard from "./StudentCard"
 
 
 

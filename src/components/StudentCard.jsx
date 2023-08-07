@@ -1,6 +1,6 @@
-import {useState, React} from "react"
+import {useState} from "react"
 import Kpi from "./Kpi.jsx"
-import "./components/kpi.css"
+import "./kpi.css"
 
 function StudentCard ({student}) {
     
@@ -15,7 +15,7 @@ function StudentCard ({student}) {
                 <img src={student.profilePhoto} alt="photo"></img>
                 <div className="student-info">
                     <h3>
-                        {student.names.preferreName}
+                        {student.names.preferredName}
                         {student.names.middleName.charAt()}. {student.names.surname}
                     </h3>
                     <p>{student.username}</p>
@@ -28,7 +28,7 @@ function StudentCard ({student}) {
                         {" "}
                         {!buttonText ? "Show More..." : "Show Less..."}
                         </button>
-                        {buttonText ? <Kpi  student={student} /> : null}
+                        {buttonText ? <Kpi student={student} /> : null}
                 </div>
             </li>
         </div>

@@ -1,5 +1,5 @@
 import React from "react"
-import "./components/kpi.css"
+import "./kpi.css"
 
 function Kpi (){
     return

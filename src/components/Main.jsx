@@ -1,5 +1,5 @@
 import React from "react"
-import FilteredStudents from "./components/FilteredStudents.jsx"
+import FilteredStudents from "./FilteredStudents" 
 
 
 

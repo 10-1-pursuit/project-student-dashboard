@@ -1,5 +1,5 @@
 import React from "react"
-import ".components/header.css"
+import "./header.css"
 
 function Header ({studentsList, setStudentsList}){
    function handleStudentsList () {
