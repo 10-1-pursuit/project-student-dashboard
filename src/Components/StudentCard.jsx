@@ -17,26 +17,20 @@ const StudentCard =({eachStudentToListObjToRender})=>{
             setTextForSeeMoreOrLessDetails("See More...")
           } else{
             setTextForSeeMoreOrLessDetails("See Less...")
-          }}
-    
-    function handleOnTrackStatus(){
-        if(eachStudentToListObjToRender.certifications.resume === true &&
-            eachStudentToListObjToRender.certifications.linkedin === true &&
-            eachStudentToListObjToRender.certifications.github === true &&
-            eachStudentToListObjToRender.certifications.mockInterview === true &&
-            eachStudentToListObjToRender.codewars.current.total > 600){
-            setTextForOnOrOffTrack("On Track")
-        } else {
-            setTextForOnOrOffTrack("Off Track")
-        }}
+          }
 
-    function handleShowStudentCardDetails(){
-        
         if(eachStudentToListObjToRender.certifications.resume === true){
             setHasResume("✅")
-        }
-         else{setHasResume("❌")}
-
+        } else{setHasResume("❌")}
+        if(eachStudentToListObjToRender.certifications.linkedin === true){
+            setHasGitHub("✅")
+        } else{setHasGitHub("❌")}
+        if(eachStudentToListObjToRender.certifications.github === true){
+            setHasLinkedIn("✅")
+        } else{setHasLinkedIn("❌")}
+        if(eachStudentToListObjToRender.certifications.mockInterview === true){
+            setHasMockInterview("✅")
+        } else{setHasMockInterview("❌")}
         return(
         setDisplayStudentCardDetails(
             <div>
@@ -51,12 +45,58 @@ const StudentCard =({eachStudentToListObjToRender})=>{
                     <ul>Assessments: {eachStudentToListObjToRender.cohort.scores.assessments * 100}%</ul>
                 <h3>Certifications: </h3>
                     <ul>Resume: {hasResume}</ul>
-                    <ul>LinkedIn: </ul>
-                    <ul>GitHub: </ul>
-                    <ul>Mock Interview: </ul>
+                    <ul>LinkedIn: {hasLinkedIn}</ul>
+                    <ul>GitHub: {hasGitHub}</ul>
+                    <ul>Mock Interview: {hasMockInterview}</ul>
             </div>
         ))
-    }
+        
+        }
+    
+    function handleOnTrackStatus(){
+        if(eachStudentToListObjToRender.certifications.resume === true &&
+            eachStudentToListObjToRender.certifications.linkedin === true &&
+            eachStudentToListObjToRender.certifications.github === true &&
+            eachStudentToListObjToRender.certifications.mockInterview === true &&
+            eachStudentToListObjToRender.codewars.current.total > 600){
+            setTextForOnOrOffTrack("On Track")
+        } else {
+            setTextForOnOrOffTrack("Off Track")
+        }}
+
+    // function handleShowStudentCardDetails(){
+    //     if(eachStudentToListObjToRender.certifications.resume === true){
+    //         setHasResume("✅")
+    //     } else{setHasResume("❌")}
+    //     if(eachStudentToListObjToRender.certifications.linkedin === true){
+    //         setHasGitHub("✅")
+    //     } else{setHasGitHub("❌")}
+    //     if(eachStudentToListObjToRender.certifications.github === true){
+    //         setHasLinkedIn("✅")
+    //     } else{setHasLinkedIn("❌")}
+    //     if(eachStudentToListObjToRender.certifications.mockInterview === true){
+    //         setHasMockInterview("✅")
+    //     } else{setHasMockInterview("❌")}
+    //     return(
+    //     setDisplayStudentCardDetails(
+    //         <div>
+    //             <h3>Codewars:</h3>
+    //                 <ul>Current Total: {eachStudentToListObjToRender.codewars.current.total}</ul>
+    //                 <ul>Last Week: {eachStudentToListObjToRender.codewars.current.lastWeek}</ul>
+    //                 <ul>Goal: {eachStudentToListObjToRender.codewars.goal.total}</ul>
+    //                 <ul>Percentage Goal Achieved: </ul>
+    //             <h3>Scores:</h3>
+    //                 <ul>Assignments: {eachStudentToListObjToRender.cohort.scores.assignments * 100}%</ul>
+    //                 <ul>Projects: {eachStudentToListObjToRender.cohort.scores.projects * 100}%</ul>
+    //                 <ul>Assessments: {eachStudentToListObjToRender.cohort.scores.assessments * 100}%</ul>
+    //             <h3>Certifications: </h3>
+    //                 <ul>Resume: {hasResume}</ul>
+    //                 <ul>LinkedIn: {hasLinkedIn}</ul>
+    //                 <ul>GitHub: {hasGitHub}</ul>
+    //                 <ul>Mock Interview: {hasMockInterview}</ul>
+    //         </div>
+    //     ))
+    //      }
     
     return(
         <div >
@@ -66,7 +106,7 @@ const StudentCard =({eachStudentToListObjToRender})=>{
         <h4>{eachStudentToListObjToRender.dob}</h4>
         <h4>{textForOnOrOffTrack}</h4>
         <h5>{displayStudentCardDetails}</h5>
-        <a onClick={(synthEvent)=>{handleSeeMoreOrLessDetailsToggle(), handleOnTrackStatus(), handleShowStudentCardDetails()}} >{textForSeeMoreOrLessDetails}</a>
+        <a onClick={(synthEvent)=>{handleSeeMoreOrLessDetailsToggle(), handleOnTrackStatus()}} >{textForSeeMoreOrLessDetails}</a>
       </div>
     )
 }
