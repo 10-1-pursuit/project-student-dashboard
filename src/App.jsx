@@ -10,7 +10,7 @@ function App() {
   const [selectedCohort, setSelectedCohort] = useState(null)
   const [darkMode, setDarkMode] = useState(false)
 
-  const toggleDarkMode = () => {setDarkMode(prevMode => !prevMode)}
+  const toggleDarkMode = () => { setDarkMode(prevMode => !prevMode) }
 
   const handleCohortSelection = cohort => {
     const cohortCode = cohort.replace(" ", "")
