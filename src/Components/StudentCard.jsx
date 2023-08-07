@@ -4,6 +4,9 @@ import { useState} from "react";
 const StudentCard =({eachStudentToListObjToRender})=>{
     const[seeStudentCardDetails, setSeeStudentCardDetails]=useState(false)
     const[textForSeeMoreOrLessDetails, setTextForSeeMoreOrLessDetails] = useState("See More...")
+    const[textForOnOrOffTrack ,setTextForOnOrOffTrack] = useState("")
+    const[displayStudentCardDetails, setDisplayStudentCardDetails] = useState("")
+
     function handleSeeMoreOrLessDetailsToggle(){
         setSeeStudentCardDetails(!seeStudentCardDetails)
           if(seeStudentCardDetails === false){
@@ -11,14 +14,49 @@ const StudentCard =({eachStudentToListObjToRender})=>{
           } else{
             setTextForSeeMoreOrLessDetails("See Less...")
           }}
+    
+    function onTrackStatus(){
+        if(eachStudentToListObjToRender.certifications.resume === true &&
+            eachStudentToListObjToRender.certifications.linkedin === true &&
+            eachStudentToListObjToRender.certifications.github === true &&
+            eachStudentToListObjToRender.certifications.mockInterview === true &&
+            eachStudentToListObjToRender.codewars.current.total > 600){
+            setTextForOnOrOffTrack("On Track")
+        } else {
+            setTextForOnOrOffTrack("Off Track")
+        }}
 
+    function showStudentCardDetails(){
+        setDisplayStudentCardDetails(
+            <div>
+                <h3>Codewars</h3>
+                    <ul>{eachStudentToListObjToRender.codewars.current.total}</ul>
+                    <ul>{eachStudentToListObjToRender}</ul>
+                    <ul></ul>
+                    <ul></ul>
+                <h3></h3>
+                    <ul></ul>
+                    <ul></ul>
+                    <ul></ul>
+                <h3></h3>
+                    <ul></ul>
+                    <ul></ul>
+                    <ul></ul>
+                    <ul></ul>
+            </div>
+
+        )
+    }
+    
     return(
         <div >
         <img src={eachStudentToListObjToRender.profilePhoto} alt=""/>
         <h3>{eachStudentToListObjToRender.names.preferredName} {eachStudentToListObjToRender.names.middleName.charAt(0)}. {eachStudentToListObjToRender.names.surname}</h3>
         <h4>{eachStudentToListObjToRender.username}</h4>
         <h4>{eachStudentToListObjToRender.dob}</h4>
-        <a onClick={(synthEvent)=>{handleSeeMoreOrLessDetailsToggle()}} >{textForSeeMoreOrLessDetails}</a>
+        <h4>{textForOnOrOffTrack}</h4>
+        <h3>{displayStudentCardDetails}</h3>
+        <a onClick={(synthEvent)=>{handleSeeMoreOrLessDetailsToggle(), onTrackStatus(), showStudentCardDetails()}} >{textForSeeMoreOrLessDetails}</a>
       </div>
     )
 }
