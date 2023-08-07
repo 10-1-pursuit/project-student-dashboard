@@ -33,14 +33,12 @@ const Home = () => {
         <p>Total Students: {filteredStudents.length}</p>
         <div className="student-profile-box">
         {filteredStudents.map((student) => (
-          <div key={student.id} className="student-profile">
-          <StudentProfile student={student} />
-          </div>
+          <StudentProfile key={student.id} student={student} />
         ))}
       </div>
       </div>
-      </div>
-</div>
+          </div>
+          </div>
     )
 }
 

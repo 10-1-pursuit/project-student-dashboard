@@ -50,13 +50,16 @@ import { useState } from 'react';
       }
   
     return (
-        <li>
+        <li className='student-profile'>
+            <div className='student-image-container'>
+            <img className="student-image" src={student.profilePhoto} alt={student.names.preferredName} />
+            </div>
+            <div className='student-details'>
         <h3>{student.names.preferredName}</h3>
         <p>Email: {student.username}</p>
         <p>Birthday: {student.dob}</p>
-        <img src={student.profilePhoto} alt={student.names.preferredName} />
         <p>{calculateOnTrackStatus(student) ? "On Track" : "Off Track"} to Graduate</p>
-        <button onClick={toggleDetails}>{isOpen ? 'Show Less...' : 'Show More...'}</button>
+        <button onClick={toggleDetails} className='show-button'>{isOpen ? 'Show Less...' : 'Show More...'}</button>
         {isOpen && (
             <div>
                 <h3>Codewars</h3>
@@ -108,9 +111,9 @@ import { useState } from 'react';
                         )
                     })}
                 </ul>
-            </div>
+                </div>
         )}
-
+      </div>
         </li>
     )
     }
