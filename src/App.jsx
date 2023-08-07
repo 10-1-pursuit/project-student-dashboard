@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, React } from "react"
 import data from "./data/data.json"
 import Header from "./components/Header.jsx"
 import Aside from "./components/Aside.jsx"
@@ -7,7 +7,8 @@ import "./components/kpi.css"
 import "./components/filteredStudents.css"
 import "./components/header.css"
 import "./components/form.css"
-
+import StudentCard from "./components/StudentCard.jsx"
+import FilteredStudents from "./components/FilteredStudents.jsx"
 
 function App() {
   const [studentsList, setStudentsList] = useState(data);
@@ -18,13 +19,36 @@ function App() {
   
   function handleStuByCohortCode(){
     let stuByCohort = {}
+
+for (let i = 0; 1 < studentsList.length; i++) {
+  if (!stuByCohort[studentsList[i].cohort.cohortCode]){
+    stuByCohort[studentsList[i].cohort.cohortCode] = [studentsList[i]]
+  }else{
+    stuByCohort[studentsList[i].cohort.cohortCode].push(studentsList[i])
   }
+}
+return stuByCohort
+  }
+  let cohortCodes = Object.keys(studentsByCode)
 
   return (
   <div>
+<Header studentsList={studentsList} /> 
+<div className="container">
+  <Aside
+  studentsList={studentsList}
+  cohortCodes={cohortCodes}
+  setSelectedCohort={setSelectedCohort}
+  studentsByCode={studentsByCode}
+  setSelectedStudentsList={setSelectedStudentsList} />
+  <Main
+  studentsList={studentsList}
+  studentsByCode={studentsByCode}
+  selectedCohort={selectedCohort}
+  selectedStudentsList={selectedStudentsList} />
 
-
-  <Header studentsList={studentsList} /> 
+  
+</div>
   </div>
   )
 }

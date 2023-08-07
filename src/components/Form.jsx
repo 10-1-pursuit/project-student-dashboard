@@ -1,5 +1,5 @@
 import React from "react"
-import "./form.css"
+import "./component/form.css"
 
 function Form (){
     return
