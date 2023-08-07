@@ -1,6 +1,6 @@
 import React from "react";
 
-const CohortList = ({ cohorts }) => {
+const CohortList = ({ cohorts, selectCohort }) => {
     const cohortsInOrder = cohorts.map(cohort => {
         const season = cohort.slice(0, -4)
         const year = cohort.slice(-4)
@@ -24,7 +24,7 @@ const CohortList = ({ cohorts }) => {
             <h3>CoHorts</h3>
             <ul>
                 {cohortsInOrder.map((cohort, index) => (
-                    <li key={index}>{cohort}</li>
+                    <li key={index} onClick={() => selectCohort(cohort)}>{cohort}</li>
                 ))}
             </ul>
         </div>

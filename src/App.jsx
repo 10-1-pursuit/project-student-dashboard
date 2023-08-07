@@ -5,8 +5,15 @@ import StudentCard from "./Components/StudentCard.jsx";
 import CohortList from "./Components/CoHortList.jsx";
 
 function App() {
-  const totalStudents = studentData.length
   const [updatedStudentData, setUpdatedStudentData] = useState(studentData)
+  const [selectedCohort, setSelectedCohort] = useState(null)
+
+  const handleCohortSelection = cohort => {
+    const cohortCode = cohort.replace(" ", "")
+    setSelectedCohort(cohortCode)
+  }
+  const displayedStudents = selectedCohort ? updatedStudentData.filter((student) => student.cohort.cohortCode === selectedCohort)
+    : updatedStudentData
 
   const uniqueCohorts = []
   studentData.forEach(student => {
@@ -35,12 +42,12 @@ function App() {
       </>
       <main>
         <div className="cohort-list">
-          <CohortList cohorts={uniqueCohorts}/>
+          <CohortList cohorts={uniqueCohorts} selectCohort={handleCohortSelection} />
         </div>
         <div className="student-list">
-          <h2>All Students</h2>
-          <p>Total Students: {totalStudents}</p>
-          {studentData.map(student => (
+          <h2>{selectedCohort ? selectedCohort.slice(0, -4) + " " + selectedCohort.slice(-4) : "All Students"}</h2>
+          <p>Total Students: {displayedStudents.length}</p>
+          {displayedStudents.map(student => (
             <StudentCard key={student.id} student={student} addNote={handleAddNote} />
           ))}
         </div>
