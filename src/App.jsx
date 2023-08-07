@@ -3,10 +3,14 @@ import studentData from "./data/data.json"
 import Header from "./Components/Header.jsx";
 import StudentCard from "./Components/StudentCard.jsx";
 import CohortList from "./Components/CoHortList.jsx";
+import "./App.css"
 
 function App() {
   const [updatedStudentData, setUpdatedStudentData] = useState(studentData)
   const [selectedCohort, setSelectedCohort] = useState(null)
+  const [darkMode, setDarkMode] = useState(false)
+
+  const toggleDarkMode = () => {setDarkMode(prevMode => !prevMode)}
 
   const handleCohortSelection = cohort => {
     const cohortCode = cohort.replace(" ", "")
@@ -36,7 +40,8 @@ function App() {
   }
 
   return (
-    <div className="app">
+    <div className={`app ${darkMode ? "dark-mode" : ""}`}>
+      <button onClick={toggleDarkMode}>Dark Mode</button>
       <>
         <Header />
       </>

@@ -1,0 +1,8 @@
+.app.dark-mode{
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+.dark-mode a {
+    color: #fff;
+}
