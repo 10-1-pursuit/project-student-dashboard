@@ -1,3 +1,5 @@
+import data from "./data/data.json"
+
 
 function App() {
   return (
