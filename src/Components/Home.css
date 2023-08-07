@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+}
+
+.cohort-list {
+    flex: 1;
+}
+
+.student-right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+
+ul {
+    list-style-type: none;
+    
+}
