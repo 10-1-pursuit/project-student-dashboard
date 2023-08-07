@@ -30,14 +30,14 @@ const Home = () => {
         ) : (
           <h2>All Students</h2>
         )}
+        <div className='student-count'>
         <p>Total Students: {filteredStudents.length}</p>
-        <div className="student-profile-box">
+        </div>
         {filteredStudents.map((student) => (
           <StudentProfile key={student.id} student={student} />
         ))}
       </div>
       </div>
-          </div>
           </div>
     )
 }
