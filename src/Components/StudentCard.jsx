@@ -12,12 +12,13 @@ const StudentCard =({eachStudentToListObjToRender})=>{
     const[hasMockInterview, setHasMockInterview] = useState("")
 
     function handleSeeMoreOrLessDetailsToggle(){
+
         setSeeStudentCardDetails(!seeStudentCardDetails)
-          if(seeStudentCardDetails === false){
-            setTextForSeeMoreOrLessDetails("See More...")
-          } else{
-            setTextForSeeMoreOrLessDetails("See Less...")
-          }
+        if(seeStudentCardDetails === false){
+          setTextForSeeMoreOrLessDetails("See More...")
+        } else{
+          setTextForSeeMoreOrLessDetails("See Less...")
+        }
 
         if(eachStudentToListObjToRender.certifications.resume === true){
             setHasResume("✅")
@@ -31,6 +32,7 @@ const StudentCard =({eachStudentToListObjToRender})=>{
         if(eachStudentToListObjToRender.certifications.mockInterview === true){
             setHasMockInterview("✅")
         } else{setHasMockInterview("❌")}
+
         return(
         setDisplayStudentCardDetails(
             <div>
