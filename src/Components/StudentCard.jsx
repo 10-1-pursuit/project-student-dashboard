@@ -6,6 +6,10 @@ const StudentCard =({eachStudentToListObjToRender})=>{
     const[textForSeeMoreOrLessDetails, setTextForSeeMoreOrLessDetails] = useState("See More...")
     const[textForOnOrOffTrack ,setTextForOnOrOffTrack] = useState("")
     const[displayStudentCardDetails, setDisplayStudentCardDetails] = useState("")
+    const[hasResume, setHasResume]=useState("")
+    const[hasLinkedIn, setHasLinkedIn] = useState("")
+    const[hasGitHub, setHasGitHub] = useState("")
+    const[hasMockInterview, setHasMockInterview] = useState("")
 
     function handleSeeMoreOrLessDetailsToggle(){
         setSeeStudentCardDetails(!seeStudentCardDetails)
@@ -15,7 +19,7 @@ const StudentCard =({eachStudentToListObjToRender})=>{
             setTextForSeeMoreOrLessDetails("See Less...")
           }}
     
-    function onTrackStatus(){
+    function handleOnTrackStatus(){
         if(eachStudentToListObjToRender.certifications.resume === true &&
             eachStudentToListObjToRender.certifications.linkedin === true &&
             eachStudentToListObjToRender.certifications.github === true &&
@@ -26,26 +30,32 @@ const StudentCard =({eachStudentToListObjToRender})=>{
             setTextForOnOrOffTrack("Off Track")
         }}
 
-    function showStudentCardDetails(){
+    function handleShowStudentCardDetails(){
+        
+        if(eachStudentToListObjToRender.certifications.resume === true){
+            setHasResume("✅")
+        }
+         else{setHasResume("❌")}
+
+        return(
         setDisplayStudentCardDetails(
             <div>
-                <h3>Codewars</h3>
-                    <ul>{eachStudentToListObjToRender.codewars.current.total}</ul>
-                    <ul>{eachStudentToListObjToRender}</ul>
-                    <ul></ul>
-                    <ul></ul>
-                <h3></h3>
-                    <ul></ul>
-                    <ul></ul>
-                    <ul></ul>
-                <h3></h3>
-                    <ul></ul>
-                    <ul></ul>
-                    <ul></ul>
-                    <ul></ul>
+                <h3>Codewars:</h3>
+                    <ul>Current Total: {eachStudentToListObjToRender.codewars.current.total}</ul>
+                    <ul>Last Week: {eachStudentToListObjToRender.codewars.current.lastWeek}</ul>
+                    <ul>Goal: {eachStudentToListObjToRender.codewars.goal.total}</ul>
+                    <ul>Percentage Goal Achieved: </ul>
+                <h3>Scores:</h3>
+                    <ul>Assignments: {eachStudentToListObjToRender.cohort.scores.assignments * 100}%</ul>
+                    <ul>Projects: {eachStudentToListObjToRender.cohort.scores.projects * 100}%</ul>
+                    <ul>Assessments: {eachStudentToListObjToRender.cohort.scores.assessments * 100}%</ul>
+                <h3>Certifications: </h3>
+                    <ul>Resume: {hasResume}</ul>
+                    <ul>LinkedIn: </ul>
+                    <ul>GitHub: </ul>
+                    <ul>Mock Interview: </ul>
             </div>
-
-        )
+        ))
     }
     
     return(
@@ -55,8 +65,8 @@ const StudentCard =({eachStudentToListObjToRender})=>{
         <h4>{eachStudentToListObjToRender.username}</h4>
         <h4>{eachStudentToListObjToRender.dob}</h4>
         <h4>{textForOnOrOffTrack}</h4>
-        <h3>{displayStudentCardDetails}</h3>
-        <a onClick={(synthEvent)=>{handleSeeMoreOrLessDetailsToggle(), onTrackStatus(), showStudentCardDetails()}} >{textForSeeMoreOrLessDetails}</a>
+        <h5>{displayStudentCardDetails}</h5>
+        <a onClick={(synthEvent)=>{handleSeeMoreOrLessDetailsToggle(), handleOnTrackStatus(), handleShowStudentCardDetails()}} >{textForSeeMoreOrLessDetails}</a>
       </div>
     )
 }
