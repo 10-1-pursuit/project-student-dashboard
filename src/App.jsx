@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import studentData from "./data/data.json"
 import Header from "./Components/Header.jsx";
 import StudentCard from "./Components/StudentCard.jsx";
-import CohortList from "./Components/CoHortList.jsx";
+import CohortList from "./Components/CohortLists.jsx";
 import "./App.css"
 
 function App() {
