@@ -1,6 +1,50 @@
-#landing-title {
-    /* font-size: 3rem; */
-    /* font-weight: 5; */
-    margin: 2rem;
+.landing-title {
+    margin: 0px;
+    padding: 3rem;
+    padding-top: 2.5rem;
     text-align: center;
+    color: white;
+    background-color: green;
+}
+
+.green-text {
+    color: green;
+}
+
+.badge-expander {
+    color: green;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.5rem;
+    margin-left: 1.75rem;
+    margin-right: 2rem;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-title {
+    text-align: center;
+}
+
+.cohort-selection {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10%;
+    width: 45%;
+}
+
+.list-item {
+    margin-bottom: 0%;
+    text-align: left;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid green;
 }
