@@ -4,7 +4,39 @@
 
 .cohort-list {
     flex: 1;
+    text-align: center;
 }
+
+.cohort-list li {
+    list-style: none;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 40px;
+    padding-right: 50px;
+    font-style: oblique;
+    font-weight: bold;
+  }
+  
+  .cohort-list li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #953434;
+  }
+  
+  .cohort-list li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #2d3188;
+  }
 
 .student-right {
     flex: 2;
@@ -12,8 +44,23 @@
     flex-direction: column;
 }
 
-
-ul {
-    list-style-type: none;
+.header {
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    background: linear-gradient(to bottom, #965cd8, #5da1c7, #4a8181, #1d8577,#6b2cb9);
+    animation: gradientAnimation 8s linear infinite;
+    background-size: 200% 200%;
     
+}
+
+.header-title {
+    background-image: linear-gradient(to left, violet, indigo, blue, green, red);
+    color: transparent;
+    text-align: center;
+    background-clip: text;
+    font-size: 25px;
+    letter-spacing: 20px;
+    -webkit-background-clip: text;
+    padding-top: 10px;
 }

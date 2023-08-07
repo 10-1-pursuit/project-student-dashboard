@@ -46,7 +46,6 @@ const FormatCohortNames = ({ studentsData, setSelectedCohort }) => {
 
     return (
       <div>
-        <h3>Choose a class by Start Date</h3>
         <ul>
         <li onClick={handleAllStudentsClick} style={{ cursor: "pointer" }}>
           All Students

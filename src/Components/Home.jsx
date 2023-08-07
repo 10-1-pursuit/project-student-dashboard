@@ -21,6 +21,7 @@ const Home = () => {
           </div>
           <div className="container">
             <div className="cohort-list">
+            <h3>Choose a class by Start Date</h3>
           <FormatCohortNames studentsData={studentsData} setSelectedCohort={setSelectedCohort}/>
         </div>
         <div className="student-right">
@@ -30,12 +31,12 @@ const Home = () => {
           <h2>All Students</h2>
         )}
         <p>Total Students: {filteredStudents.length}</p>
-        <div className="student-profile">
-      <ul>
+        <div className="student-profile-box">
         {filteredStudents.map((student) => (
-          <StudentProfile key={student.id} student={student} />
+          <div key={student.id} className="student-profile">
+          <StudentProfile student={student} />
+          </div>
         ))}
-      </ul>
       </div>
       </div>
       </div>
