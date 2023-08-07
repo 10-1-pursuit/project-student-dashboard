@@ -1,0 +1,16 @@
+.sidebar {
+    padding: 10px 10px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin: 20px;
+    font-weight: bold;
+}
+
+.sidebar-list {
+    padding: 15px 15px;
+    margin: 25px 25px;
+    border-bottom: 1px solid green;
+    font-weight: bold;
+}

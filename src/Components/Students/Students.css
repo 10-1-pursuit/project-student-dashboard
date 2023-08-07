@@ -1,0 +1,46 @@
+.students-container {
+    padding: 10px 10px;
+}
+
+.students-container h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.students-container p span {
+    color: rgb(3, 145, 97);
+}
+
+.student-container {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    border: 1px solid green;
+    padding: 10px 10px;
+    margin: 10px 10px;
+}
+
+.student-container img {
+    width: 150px;
+}
+
+.student-container__h3 {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.student-container__username {
+    margin-top: 5px;
+}
+
+.student-container__dob {
+    margin-top: 5px;
+}
+
+.student-container__show-more {
+    margin-top: 15px;
+}
+
+.student-container__on-track-to-grad {
+    margin-top: 15px;
+}

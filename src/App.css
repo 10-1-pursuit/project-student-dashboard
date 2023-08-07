@@ -1,0 +1,8 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  .container-grid {
+    display: grid;
+    grid-template-columns: 35% 65%;
+  }
