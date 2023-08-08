@@ -17,7 +17,6 @@ const isOnTrack = (student) => {
 const StudentCard = ({ student, addNote }) => {
     const [commenter, setCommenter] = useState("")
     const [comment, setComment] = useState("")
-    const [notes, setNotes] = useState([])
     const [expandedState, setExpandedState] = useState({});
 
     const handleCommenterChange = event => setCommenter(event.target.value)
@@ -28,8 +27,6 @@ const StudentCard = ({ student, addNote }) => {
         if (commenter.trim() === "" || comment.trim() === "") return;
         addNote(student.id, commenter, comment)
 
-        const newNote = { commenter, comment }
-        setNotes([...notes, newNote])
         setCommenter("")
         setComment("")
     }
@@ -60,20 +57,20 @@ const StudentCard = ({ student, addNote }) => {
                 {isExpanded && (
                     <div className="additional-details">
                         <div className="column">
-                            <h3>Codewars</h3>
+                            <h3>Codewars:</h3>
                             <p>Current: {student.codewars.current.total}</p>
                             <p>Last Week: {student.codewars.current.lastWeek}</p>
                             <p>Goal: {student.codewars.goal.total}</p>
                             <p>Percent of Goal Achieved: {((student.codewars.current.total / student.codewars.goal.total) * 100).toFixed(2)}%</p>
                         </div>
                         <div className="column">
-                            <h3>Scores</h3>
+                            <h3>Scores:</h3>
                             <p>Assignments: {(student.cohort.scores.assignments * 100).toFixed(2)}%</p>
                             <p>Projects: {(student.cohort.scores.projects * 100).toFixed(2)}%</p>
                             <p>Assessments: {(student.cohort.scores.assessments * 100).toFixed(2)}%</p>
                         </div>
                         <div className="column">
-                            <h3>Certifications</h3>
+                            <h3>Certifications:</h3>
                             <p>Resume: {student.certifications.resume ? "✅" : "❌"}</p>
                             <p>LinkedIn: {student.certifications.linkedin ? "✅" : "❌"}</p>
                             <p>Mock Interview: {student.certifications.mockInterview ? "✅" : "❌"}</p>
@@ -85,7 +82,6 @@ const StudentCard = ({ student, addNote }) => {
                             comment={comment}
                             handleCommentChange={handleCommentChange}
                             handleSubmit={handleSubmit}
-                            notes={notes}
                             handleCommenterChange={handleCommenterChange}
                         />
                     </div>
