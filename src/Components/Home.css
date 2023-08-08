@@ -1,0 +1,163 @@
+body {
+  background-color: #e5e5f7;
+  opacity: 0.8;
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      #e5e5f7 10px
+    ),
+    repeating-linear-gradient(#787dd455, #8084db);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  height: 80px;
+  background: linear-gradient(
+    to bottom,
+    #965cd8,
+    #5da1c7,
+    #4a8181,
+    #1d8577,
+    #6b2cb9
+  );
+  animation: gradientAnimation 8s linear infinite;
+  background-size: 200% 200%;
+}
+
+.header-title {
+  background-image: linear-gradient(to left, violet, indigo, blue, green, red);
+  color: transparent;
+  text-align: center;
+  background-clip: text;
+  font-size: 25px;
+  letter-spacing: 20px;
+  -webkit-background-clip: text;
+  padding-top: 10px;
+}
+
+.toggle-button {
+  width: 115px;
+}
+
+.student-list li {
+  padding: 5px;
+  font-size: 30px;
+  list-style: none;
+}
+
+.cohort-list {
+  flex: 1;
+  text-align: center;
+  margin-right: 20px;
+  margin-top: 5px;
+  position: fixed;
+  margin-left: 20px;
+}
+
+.cohort-list li {
+  list-style: none;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 40px;
+  padding-right: 50px;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+.cohort-list li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #953434;
+}
+
+.cohort-list li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #2d3188;
+}
+
+.student-count {
+  padding-bottom: 10px;
+}
+
+.student-right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  margin-left: 400px;
+}
+
+.student-profile {
+  display: flex;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+.student-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  padding-right: 20px;
+}
+
+.student-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.details-group {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 100px;
+}
+
+.details-left {
+  flex: 1;
+}
+
+.details-center {
+  flex: 1;
+  text-align: center;
+}
+
+.details-right {
+  flex: 1;
+  text-align: right;
+}
+
+.student-details h3 {
+  width: 150px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.student-details button {
+  margin-top: 10px;
+}
+
+.show-button {
+  width: 150px;
+}
+
+.show-button:hover {
+  background-color: #2a83d5;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
