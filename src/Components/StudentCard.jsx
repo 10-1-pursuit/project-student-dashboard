@@ -65,47 +65,13 @@ const StudentCard =({eachStudentToListObjToRender})=>{
         } else {
             setTextForOnOrOffTrack("Off Track")
         }}
-
-    // function handleShowStudentCardDetails(){
-    //     if(eachStudentToListObjToRender.certifications.resume === true){
-    //         setHasResume("✅")
-    //     } else{setHasResume("❌")}
-    //     if(eachStudentToListObjToRender.certifications.linkedin === true){
-    //         setHasGitHub("✅")
-    //     } else{setHasGitHub("❌")}
-    //     if(eachStudentToListObjToRender.certifications.github === true){
-    //         setHasLinkedIn("✅")
-    //     } else{setHasLinkedIn("❌")}
-    //     if(eachStudentToListObjToRender.certifications.mockInterview === true){
-    //         setHasMockInterview("✅")
-    //     } else{setHasMockInterview("❌")}
-    //     return(
-    //     setDisplayStudentCardDetails(
-    //         <div>
-    //             <h3>Codewars:</h3>
-    //                 <ul>Current Total: {eachStudentToListObjToRender.codewars.current.total}</ul>
-    //                 <ul>Last Week: {eachStudentToListObjToRender.codewars.current.lastWeek}</ul>
-    //                 <ul>Goal: {eachStudentToListObjToRender.codewars.goal.total}</ul>
-    //                 <ul>Percentage Goal Achieved: </ul>
-    //             <h3>Scores:</h3>
-    //                 <ul>Assignments: {eachStudentToListObjToRender.cohort.scores.assignments * 100}%</ul>
-    //                 <ul>Projects: {eachStudentToListObjToRender.cohort.scores.projects * 100}%</ul>
-    //                 <ul>Assessments: {eachStudentToListObjToRender.cohort.scores.assessments * 100}%</ul>
-    //             <h3>Certifications: </h3>
-    //                 <ul>Resume: {hasResume}</ul>
-    //                 <ul>LinkedIn: {hasLinkedIn}</ul>
-    //                 <ul>GitHub: {hasGitHub}</ul>
-    //                 <ul>Mock Interview: {hasMockInterview}</ul>
-    //         </div>
-    //     ))
-    //      }
-    
+        
     return(
         <div >
         <img src={eachStudentToListObjToRender.profilePhoto} alt=""/>
         <h3>{eachStudentToListObjToRender.names.preferredName} {eachStudentToListObjToRender.names.middleName.charAt(0)}. {eachStudentToListObjToRender.names.surname}</h3>
         <h4>{eachStudentToListObjToRender.username}</h4>
-        <h4>{eachStudentToListObjToRender.dob}</h4>
+        <h4>Birthday: {eachStudentToListObjToRender.dob}</h4>
         <h4>{textForOnOrOffTrack}</h4>
         <h5>{displayStudentCardDetails}</h5>
         <a onClick={(synthEvent)=>{handleSeeMoreOrLessDetailsToggle(), handleOnTrackStatus()}} >{textForSeeMoreOrLessDetails}</a>
