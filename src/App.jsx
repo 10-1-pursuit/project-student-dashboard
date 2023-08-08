@@ -14,35 +14,36 @@ import CohortList from "./componnents/CohortList"
 function App() {
 
 
-const [studentArray , setStudentArray] = useState(studentData)
+  const [studentArray, setStudentArray] = useState(studentData)
 
-const studentsToRender = studentArray.map(
-  (eachStudentObj) => {
+  const studentsToRender = studentArray.map(
+    (eachStudentObj) => {
 
-    return (
-      
-      <StudentCard  eachStudentObj={eachStudentObj}  />
-  
-    )
-  })
+      return (
+
+        <StudentCard eachStudentObj={eachStudentObj} />
+
+      )
+    })
 
   return (
     <>
-      <main>
-        <div>
-          <header>
-            <h1>Student Dashboard</h1>
-          </header>
-        </div>
-        <div className="class">
-          < CohortList setStudentArray={setStudentArray} />
 
-        </div>
-        <div id="imgs">
-          <h1> All Students</h1>
-          {studentsToRender}
-        </div>
-      </main>
+      <div>
+        <header>
+          <h1>Student Dashboard</h1>
+        </header>
+      </div>
+      <main>
+      <div className="class">
+        < CohortList setStudentArray={setStudentArray} />
+
+      </div>
+      <div id="imgs">
+        <h1> All Students</h1>
+        {studentsToRender}
+      </div>
+    </main >
 
     </>
   );
