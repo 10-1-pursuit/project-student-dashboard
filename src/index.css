@@ -1,0 +1,116 @@
+/* .header {
+    background-color: rgb(222, 78, 186);
+    height: 4em;
+    margin: 0;
+    border: 5px solid chartreuse;
+    text-align: center;
+    color: {.header.background-color};
+} */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto 1fr auto;
+    /* Adjusted row sizes */
+    gap: 10px;
+    height: 100%;
+    grid-template-areas:
+        "header header header"
+        "img img img"
+        "sidebar sCardArea sCardArea"
+        "footer footer footer";
+}
+
+.header,
+.sidebar,
+.sCardArea,
+.footer {
+    padding: 20px;
+    /* border: 1px solid #5111b1; */
+}
+
+
+/* * {
+    border: 1px solid #b11111;
+} */
+
+
+:root {
+    --header-bg-color: rgb(222, 78, 186);
+    --border: chartreuse;
+}
+
+.header {
+    background-color: var(--header-bg-color);
+    height: 4em;
+    margin: 0;
+    border: 5px solid chartreuse;
+    text-align: center;
+    color: var(--border);
+    grid-area: header;
+}
+
+.img:hover {
+    filter: drop-shadow(0 0 2em rgba(127, 255, 0, 0.667));
+}
+
+.img {
+    display: grid;
+    place-items: center;
+    grid-area: img;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    /* Place sidebar element in the "sidebar" grid area */
+}
+
+.sCardArea {
+    grid-area: sCardArea;
+    /* Place card elements in the "sCard" grid area */
+}
+
+.sCard-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    border: 1px solid #ee0a0a;
+    gap: none;
+    height: 100%;
+    margin-bottom: 10px;
+    padding: 22px;
+    grid-template-areas:
+        "sCard-img sCard";
+}
+
+.sCard {
+    /* background-color: #cbc9c9; */
+    margin-left: none;
+    padding-right: 20px;
+    text-align: left;
+    border-radius: 8px;
+    grid-area: sCard;
+}
+
+.sCard-img {
+    max-width: 50%;
+    height: auto;
+    align-self: center;
+    border-radius: 10%;
+    margin-left: 20px;
+    grid-area: sCard-img;
+}
+
+.sCard:hover,
+.sCard-img:hover {
+    filter: drop-shadow(0 0 2em rgba(127, 255, 0, 0.667));
+}
+
+.footer {
+    background-color: var(--header-bg-color);
+    height: 4em;
+    margin-bottom: 0;
+    border: 5px solid chartreuse;
+    text-align: center;
+    color: var(--border);
+    grid-area: footer;
+}
