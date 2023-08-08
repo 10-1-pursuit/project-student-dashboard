@@ -65,9 +65,9 @@ const StudentCard = ({ student, addNote }) => {
                         </div>
                         <div className="column">
                             <h3>Scores:</h3>
-                            <p>Assignments: {(student.cohort.scores.assignments * 100).toFixed(2)}%</p>
-                            <p>Projects: {(student.cohort.scores.projects * 100).toFixed(2)}%</p>
-                            <p>Assessments: {(student.cohort.scores.assessments * 100).toFixed(2)}%</p>
+                            <p>Assignments: {(student.cohort.scores.assignments * 100)}%</p>
+                            <p>Projects: {(student.cohort.scores.projects * 100)}%</p>
+                            <p>Assessments: {(student.cohort.scores.assessments * 100)}%</p>
                         </div>
                         <div className="column">
                             <h3>Certifications:</h3>

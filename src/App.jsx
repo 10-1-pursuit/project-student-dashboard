@@ -13,8 +13,12 @@ function App() {
   const toggleDarkMode = () => { setDarkMode(prevMode => !prevMode) }
 
   const handleCohortSelection = cohort => {
-    const cohortCode = cohort.replace(" ", "")
-    setSelectedCohort(cohortCode)
+    if (cohort === null) {
+      setSelectedCohort(null);
+    } else {
+      const cohortCode = cohort.replace(" ", "");
+      setSelectedCohort(cohortCode);
+    }
   }
   const displayedStudents = selectedCohort ? updatedStudentData.filter((student) => student.cohort.cohortCode === selectedCohort)
     : updatedStudentData

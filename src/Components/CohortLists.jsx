@@ -23,6 +23,7 @@ const CohortList = ({ cohorts, selectCohort }) => {
         <div className="cohort-list">
             <h3>CoHorts</h3>
             <ul>
+                <li onClick={() => selectCohort(null)}>All Students</li>
                 {cohortsInOrder.map((cohort, index) => (
                     <li key={index} onClick={() => selectCohort(cohort)}>{cohort}</li>
                 ))}
