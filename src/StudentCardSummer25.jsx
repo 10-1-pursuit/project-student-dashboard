@@ -21,6 +21,8 @@ function StudentCardsSummer25() {
 
         const[hasIt,SetHasIt]=useState("✅");
         const[doesntHaveIt,SetDoenstHaveIt]=useState("❌")
+        const[offTrack,SetOffTrack]=useState(<>OFF TRACK</>)
+        const[onTrack,SetOnTrack]=useState(<>ON TRACK TO GRADUATE</>)
 
         if(eachStudent.cohort.cohortCode==="Summer2025")
        
@@ -59,6 +61,9 @@ function StudentCardsSummer25() {
                     <p>{eachStudent.username}</p>
                     <p>BirthDay : {eachStudent.dob}</p>
                     <p>{eachStudent.cohort.cohortCode}</p>
+                    <p>{eachStudent.certifications.resume&&eachStudent.certifications.linkedin
+         &&eachStudent.certifications.github&& eachStudent.certifications.mockInterview?onTrack:offTrack}</p>
+                
                     <br>
                     </br>
                     <br></br>
@@ -78,7 +83,7 @@ function StudentCardsSummer25() {
                         <th className="top3">Certifications</th>
                         <tbody>
                             <tr>
-                                <td>CurrentTotal:{eachStudent.codewars.current.total}%</td>
+                                <td>CurrentTotal:{eachStudent.codewars.current.total}</td>
                                 <td>Assignments:{eachStudent.cohort.scores.assignments}%</td>
                                 
                                 <td>Resume:{eachStudent.certifications.resume ?hasIt:doesntHaveIt}</td>
@@ -91,7 +96,7 @@ function StudentCardsSummer25() {
                                 <td>Assesment:{eachStudent.cohort.scores.assessments}%</td>  
                                 
                                 <td>Mock Interview:{eachStudent.certifications.mockInterview?hasIt:doesntHaveIt}</td></tr>
-                                <tr><td>Percent of Goal</td> 
+                                <tr><td>Percent of Goal {(eachStudent.codewars.current.total /eachStudent.codewars.goal.total*100).toFixed(0)}%</td> 
                                 <td></td>  
                                 
                                 <td>GitHub:{eachStudent.certifications.github?hasIt:doesntHaveIt}</td></tr>

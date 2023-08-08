@@ -28,6 +28,10 @@ function StudentCardsFall26() {
 
         const[hasIt,SetHasIt]=useState("✅");
         const[doesntHaveIt,SetDoenstHaveIt]=useState("❌")
+        const[offTrack,SetOffTrack]=useState(<>OFF TRACK</>)
+        const[onTrack,SetOnTrack]=useState(<>ON TRACK TO GRADUATE</>)
+
+        
 
         if (eachStudent.cohort.cohortCode === "Fall2026")
             return (
@@ -38,6 +42,9 @@ function StudentCardsFall26() {
                         <p>{eachStudent.username}</p>
                         <p>BirthDay : {eachStudent.dob}</p>
                         <p>{eachStudent.cohort.cohortCode}</p>
+                        <p>{eachStudent.certifications.resume&&eachStudent.certifications.linkedin
+         &&eachStudent.certifications.github&& eachStudent.certifications.mockInterview?onTrack:offTrack}</p>
+                
                         <br>
                         </br>
                         <br></br>
@@ -45,7 +52,7 @@ function StudentCardsFall26() {
                             <a><button onClick={() => SetShows(!shows)}>ShowMore.....</button></a>
                             <a><button onClick={() => SetShows(!shows)}>ShowLess.....</button></a>
                             {shows && (
-                                <div id={eachStudent.id}><table id={eachStudent.id}>
+                                <div id={eachStudent.notes}><table id={eachStudent.id}>
                                     <th className="top1">CodeWars</th>
                                     <th className="top2">Scores</th>
                                     <th className="top3">Certifications</th>
@@ -63,7 +70,7 @@ function StudentCardsFall26() {
                                         <tr><td>Goal:{eachStudent.codewars.goal.total}</td>
                                             <td>Assesment:{eachStudent.cohort.scores.assessments}%</td>
                                             <td>Mock Interview:{eachStudent.certifications.mockInterview?hasIt:doesntHaveIt}</td></tr>
-                                            <tr><td>Percent of Goal</td> 
+                                            <tr><td>Percent of Goal {(eachStudent.codewars.current.total /eachStudent.codewars.goal.total*100).toFixed(0)}%</td> 
                                 <td></td>  
                                 
                                 <td>GitHub:{eachStudent.certifications.github ? hasIt:doesntHaveIt}</td></tr>

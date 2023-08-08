@@ -15,6 +15,10 @@ function StudentCardsSummer26() {
         const[shows,SetShows]=useState('true')
         const[hasIt,SetHasIt]=useState("✅");
         const[doesntHaveIt,SetDoenstHaveIt]=useState("❌")
+        const[offTrack,SetOffTrack]=useState(<>OFF TRACK</>)
+        const[onTrack,SetOnTrack]=useState(<>ON TRACK TO GRADUATE</>)
+
+        
 
         if(eachStudent.cohort.cohortCode === "Summer2026")
        
@@ -52,6 +56,9 @@ function StudentCardsSummer26() {
                     <p>{eachStudent.username}</p>
                     <p>BirthDay : {eachStudent.dob}</p>
                     <p>{eachStudent.cohort.cohortCode}</p>
+                    <p>{eachStudent.certifications.resume&&eachStudent.certifications.linkedin
+         &&eachStudent.certifications.github&& eachStudent.certifications.mockInterview?onTrack:offTrack}</p>
+                
                     <br>
                     </br>
                     <br></br>
@@ -82,7 +89,7 @@ function StudentCardsSummer26() {
                                 
                                 <td>Mock Interview:{eachStudent.certifications.mockInterview ?hasIt:doesntHaveIt}</td></tr>
                             
-                                <tr><td>Percent of Goal</td> 
+                                <tr><td>Percent of Goal {(eachStudent.codewars.current.total /eachStudent.codewars.goal.total*100).toFixed(0)}%</td> 
                                 <td></td>  
                                 
                                 <td>GitHub:{eachStudent.certifications.github ?hasIt:doesntHaveIt}</td></tr>

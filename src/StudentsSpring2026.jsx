@@ -15,6 +15,11 @@ function StudentCardsSpring26() {
         const[shows,SetShows]=useState('true')
         const[hasIt,SetHasIt]=useState("✅");
         const[doesntHaveIt,SetDoenstHaveIt]=useState("❌")
+        const[offTrack,SetOffTrack]=useState(<>OFF TRACK</>)
+        const[onTrack,SetOnTrack]=useState(<>ON TRACK TO GRADUATE</>)
+       
+
+        
 
         if(eachStudent.cohort.cohortCode === "Spring2026")
        
@@ -43,8 +48,11 @@ function StudentCardsSpring26() {
         // }
         
 
-        return (
+        return (<>
+
+
             <div className="layout" key={Math.random()*100000}>
+               
 
                 <section key={eachStudent.id}><img src={eachStudent.profilePhoto} /></section>
 
@@ -52,6 +60,9 @@ function StudentCardsSpring26() {
                     <p>{eachStudent.username}</p>
                     <p>BirthDay : {eachStudent.dob}</p>
                     <p>{eachStudent.cohort.cohortCode}</p>
+                    <p>{eachStudent.certifications.resume&&eachStudent.certifications.linkedin
+         &&eachStudent.certifications.github&& eachStudent.certifications.mockInterview?onTrack:offTrack}</p>
+                
                     <br>
                     </br>
                     <br></br>
@@ -68,7 +79,7 @@ function StudentCardsSpring26() {
                         <th className="top3">Certifications</th>
                         <tbody>
                             <tr>
-                                <td>CurrentTotal:{eachStudent.codewars.current.total}%</td>
+                                <td>CurrentTotal:{eachStudent.codewars.current.total}</td>
                                 <td>Assignments:{eachStudent.cohort.scores.assignments}%</td>
                                 
                                 <td>Resume:{eachStudent.certifications.resume ?hasIt:doesntHaveIt}</td>
@@ -82,7 +93,7 @@ function StudentCardsSpring26() {
                                 
                                 <td>Mock Interview:{eachStudent.certifications.mockInterview ?hasIt:doesntHaveIt}</td></tr>
                             
-                        <tr><td>Percent of Goal</td> 
+                        <tr><td>Percent of Goal {(eachStudent.codewars.current.total /eachStudent.codewars.goal.total*100).toFixed(0)}%</td> 
                                 <td></td>  
                                 
                                 <td>GitHub:{ eachStudent.certifications.github ?hasIt:doesntHaveIt}</td></tr>
@@ -99,7 +110,7 @@ function StudentCardsSpring26() {
                <div id={eachStudent.id}>< OneOnOneForm id={eachStudent.id}/></div>
 
 
-            </div>);
+            </div></>);
     })
 
     return (<div className="spring2026" hidden="hidden" > {studentsToRender}</div>);

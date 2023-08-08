@@ -21,45 +21,29 @@ return count
         const[shows,SetShows]=useState('true')
         const[hasIt,SetHasIt]=useState("✅");
         const[doesntHaveIt,SetDoenstHaveIt]=useState("❌")
+        const[offTrack,SetOffTrack]=useState(<>OFF TRACK</>)
+        const[onTrack,SetOnTrack]=useState(<>ON TRACK TO GRADUATE</>)
 
         
        
 
-        // // console.log(ifTrue)
-
-        // if(ifTrue===eachStudent.certifications.linkedin){
-        //     setIfTrue("❌")
-
-           
-        // }
-
-        // if(eachStudent.certifications.linkedin==="false"){
-
-        //     return(<>❌</>);
-
-
-        // }
-
-        // for (let cert of studentsToRender){
-
-        //     if(certifications.linkedin==="false"){
-
-
-        //     }
-        // }
+        
         
 
         return (
             <>
             <div className="layout" key={Math.random()*100000}>
                 
-
                 <section key={eachStudent.id}><img src={eachStudent.profilePhoto} /></section>
 
                 <section><p className="student-name"> {eachStudent.names.preferredName}  {eachStudent.names.middleName} {eachStudent.names.surname}</p>
                     <p>{eachStudent.username}</p>
                     <p>BirthDay : {eachStudent.dob}</p>
                     <p>{eachStudent.cohort.cohortCode}</p>
+                    <p>{eachStudent.certifications.resume&&eachStudent.certifications.linkedin
+         &&eachStudent.certifications.github&& eachStudent.certifications.mockInterview?onTrack:offTrack}</p>
+                
+
                     <br>
                     </br>
                     <br></br>
@@ -76,7 +60,7 @@ return count
                         <th className="top3">Certifications</th>
                         <tbody>
                             <tr>
-                                <td>CurrentTotal:{eachStudent.codewars.current.total}%</td>
+                                <td>CurrentTotal:{eachStudent.codewars.current.total}</td>
                                 <td>Assignments:{eachStudent.cohort.scores.assignments}%</td>
                                 
                                 <td>Resume:{eachStudent.certifications.resume ?hasIt:doesntHaveIt}</td>
@@ -89,7 +73,7 @@ return count
                                 <td>Assesment:{eachStudent.cohort.scores.assessments}%</td>  
                                 
                                 <td>Mock Interview:{eachStudent.certifications.mockInterview ?hasIt:doesntHaveIt}</td></tr>
-                                <tr><td>Percent of Goal</td> 
+                                <tr><td>Percent of Goal {(eachStudent.codewars.current.total /eachStudent.codewars.goal.total*100).toFixed(0)}%</td> 
                                 <td></td>  
                                 
                                 <td>GitHub:{eachStudent.certifications.github ?hasIt:doesntHaveIt}</td></tr>
@@ -116,7 +100,7 @@ return count
     {/* <div>{classCount()}</div> */}
     
     
-    <div className="all-students" >Count of Student:{classCount()}{studentsToRender}</div></>);
+    <div className="all-students" >Count of Students:{classCount()}{studentsToRender}</div></>);
 
 }
 
