@@ -1,0 +1,8 @@
+.notes{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+.notes label{
+    display: flex;
+}
