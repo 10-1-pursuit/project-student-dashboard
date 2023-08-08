@@ -24,3 +24,7 @@ This is a mock website that contains various buttons and clicks to achieve diffe
 ## Usage
 
 1. Type npm run dev in the terminal to open the website on localhost.
+
+## Website
+
+Netlify URL: https://app.netlify.com/sites/tubular-cascaron-06f7f5/overview
