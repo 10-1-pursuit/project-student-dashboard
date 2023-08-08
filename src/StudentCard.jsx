@@ -42,7 +42,7 @@ function StudentCardsFall26() {
         
 
         return (
-            <div className="layout">
+            <div className="layout" key={Math.random()*100000}>
 
                 <section key={eachStudent.id}><img src={eachStudent.profilePhoto} /></section>
 
@@ -56,7 +56,7 @@ function StudentCardsFall26() {
 
                     <a>ShowMore.....</a>
 
-                    <div id="table"><table id ={eachStudent.id}>
+                    <div key={eachStudent.id}id="table"><table id ={eachStudent.id}>
                         <th className="top1">CodeWars</th>
                         
                         <th className="top2">Scores</th>
@@ -93,7 +93,7 @@ function StudentCardsFall26() {
             </div>);
     })
 
-    return (<div class="winter2026" hidden="hidden"> {studentsToRender}</div>);
+    return (<div key={Math.random()*100} className="winter2026" hidden="hidden"> {studentsToRender}</div>);
 
 }
 

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import data from "../src/data/data.json"
+import OneOnOneForm from "./1on1"
 
 
 
@@ -11,10 +12,11 @@ function StudentCardsSummer26() {
         
         // const[ifTrue,setIfTrue]=useState(false)
 
+        const[shows,SetShows]=useState('true')
         const[hasIt,SetHasIt]=useState("✅");
         const[doesntHaveIt,SetDoenstHaveIt]=useState("❌")
 
-        if(eachStudent.cohort.cohortCode==="Summer2026")
+        if(eachStudent.cohort.cohortCode === "Summer2026")
        
 
         // // console.log(ifTrue)
@@ -42,7 +44,7 @@ function StudentCardsSummer26() {
         
 
         return (
-            <div className="layout">
+            <div className="layout" key={Math.random()*100000}>
 
                 <section key={eachStudent.id}><img src={eachStudent.profilePhoto} /></section>
 
@@ -53,9 +55,11 @@ function StudentCardsSummer26() {
                     <br>
                     </br>
                     <br></br>
+                    <div>
 
-                    <a>ShowMore.....</a>
-
+                    <a><button onClick={()=>SetShows(!shows)}>ShowMore.....</button></a>
+                    <a><button onClick={()=>SetShows(!shows)}>ShowLess.....</button></a>
+                {shows && (
                     <div id="table"><table id ={eachStudent.id}>
                         <th className="top1">CodeWars</th>
                         
@@ -67,24 +71,30 @@ function StudentCardsSummer26() {
                                 <td>CurrentTotal:{eachStudent.codewars.current.total}%</td>
                                 <td>Assignments:{eachStudent.cohort.scores.assignments}%</td>
                                 
-                                <td>Resume:{hasIt}</td>
+                                <td>Resume:{eachStudent.certifications.resume ?hasIt:doesntHaveIt}</td>
                             </tr>
                             <tr><td>LastWeek:{eachStudent.codewars.current.lastWeek}</td> 
                                 <td>Projects:{eachStudent.cohort.scores.projects}%</td>
                                 
-                                <td>LinkedIn :{hasIt}</td></tr>
+                                <td>LinkedIn :{eachStudent.certifications.linkedin ?hasIt:doesntHaveIt}</td></tr>
                             <tr><td>Goal:{eachStudent.codewars.goal.total}</td> 
                                 <td>Assesment:{eachStudent.cohort.scores.assessments}%</td>  
                                 
-                                <td>Mock Interview:{doesntHaveIt}</td></tr>
+                                <td>Mock Interview:{eachStudent.certifications.mockInterview ?hasIt:doesntHaveIt}</td></tr>
+                            
+                                <tr><td>Percent of Goal</td> 
+                                <td></td>  
+                                
+                                <td>GitHub:{eachStudent.certifications.github ?hasIt:doesntHaveIt}</td></tr>
                             
                         </tbody>
                         
 
-                    </table></div>
+                    </table></div>)}</div>
 
-                    <p>Percent of Goal <br></br>GitHub:{doesntHaveIt}</p>
+                    {/* <p>Percent of Goal <br></br>GitHub:{doesntHaveIt}</p> */}
                 </section>
+               <div id={eachStudent.id}>< OneOnOneForm id={eachStudent.id}/></div>
 
 
 
@@ -93,7 +103,7 @@ function StudentCardsSummer26() {
             </div>);
     })
 
-    return (<div  class="summer2026" hidden="hidden"> {studentsToRender}</div>);
+    return (<div className="summer2026" hidden="hidden" > {studentsToRender}</div>);
 
 }
 

@@ -7,7 +7,7 @@ import  "./App.css"
 import data from "../src/data/data.json"
 import OneOnOneForm from "./1on1";
 import StudentCardsFall25 from "./StudenCardFall2025";
-import StudentCardsWinter26 from "./StudentsWinter2026";
+import StudentsCardsWinter26 from "./StudentsWinter2026";
 import StudentCardsSummer26 from "./StudentsSummer2026";
 import StudentCardsSpring26 from "./StudentsSpring2026";
 import StudentCardsFall26 from "./StudentCardsFall2026";
@@ -22,16 +22,52 @@ console.log(data)
   
 
 function App() {
+
+  function Comments(){
+
+
+    return (<>
+
+    <div>
+
+
+
+{/* <div>{CommentUpdater}</div> */}
+
+
+
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    </>);
+
+
+
+
+  }
+const CommenterUpdater= document.querySelector('input#commenter')
+ const CommentUpdater= document.querySelector('input#comment')
   return (
     <>
       <TopBar/>
       <main className="container">
-          <section id="Student-List" ><StudentList/><br></br><section><OneOnOneForm/></section></section>
+          <section id="Student-List" ><StudentList/><br></br>
           
-          <section key="card"id="Student-Card"><StudentCardsAll key=""/>
+          </section>
+        
+       
+          
+          <section key="card"id="Student-Card">
+           <section> <StudentCardsAll /></section>
           <section><StudentCards/></section>
           <section><StudentCardsFall26/></section>
-          <section><StudentCardsWinter26/></section>
+          <section><StudentsCardsWinter26/></section> 
           <section><StudentCardsSummer26/></section>
           <section><StudentCardsSpring26/></section>
           <section><StudentCardsWinter25/></section>
