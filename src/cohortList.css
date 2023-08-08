@@ -1,0 +1,19 @@
+#classList {
+    text-align: left;
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    border: 2px solid salmon;
+}
+
+a:link {
+    color: blue;
+}
+a:visited {
+    color:brown
+}
+a:hover{
+    color:chocolate
+}
+a:active{
+    color:crimson
+}
