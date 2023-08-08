@@ -45,10 +45,10 @@ function App() {
 
   return (
     <div className={`app ${darkMode ? "dark-mode" : ""}`}>
-      <button onClick={toggleDarkMode}>Dark Mode</button>
       <>
         <Header />
       </>
+      <button onClick={toggleDarkMode}>Dark Mode</button>
       <main>
         <div className="cohort-list">
           <CohortList cohorts={uniqueCohorts} selectCohort={handleCohortSelection} />

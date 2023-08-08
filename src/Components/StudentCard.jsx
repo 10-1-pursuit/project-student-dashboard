@@ -49,8 +49,8 @@ const StudentCard = ({ student, addNote }) => {
             <div>
                 <h3>{`${student.names.preferredName} ${student.names.middleName} ${student.names.surname}`}</h3>
                 <p>{student.username}</p>
-                <p>{student.dob}</p>
-                <p>Status: {onTrack ? "On Track" : "Off Track"}</p>
+                <p>Birthday: {student.dob}</p>
+                <p>{onTrack ? "On Track to Graduate" : ""}</p>
                 <a href="#" onClick={event => toggleExpanded(event)}>
                     {isExpanded ? "Show Less..." : "Show More..."}
                 </a>

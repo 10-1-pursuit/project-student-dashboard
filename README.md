@@ -12,7 +12,6 @@ The Student Dashboard Application provides a user-friendly platform to access an
 - - [Expanding Student Details](#expanding-student-details)
 - [Adding Notes](#adding-notes)
 - [Show More / Show Less](#show-more--show-less)
-- [On Track vs. Off Track](#on-track-vs-off-track)
 - [Contact and Support](#contact-and-support)
 
 ## Getting Started
@@ -47,7 +46,7 @@ npm run dev
   - Full name
   - Username
   - Date of birth
-  - Status (On Track or Off Track)
+  - If a student is on track to graduate (based on various criteria, such as certifications, Codewars score, and assessment performance), the card will display "On Track to Graduate".
 
 ### Expanding Student Details
 
@@ -68,10 +67,6 @@ npm run dev
 - Click "Show More..." at the bottom of a student's card to reveal additional information.
 - This includes Codewars progress, scores (assignments, projects, assessments), certifications, and notes.
 - To collapse the additional information, click "Show Less..." to return to the main view.
-
-## On Track vs. Off Track
-
-- Students are categorized as "On Track" or "Off Track" based on various criteria, such as certifications, Codewars score, and assessment performance.
 
 ## Contact and Support
 
