@@ -1,0 +1,8 @@
+.show-more-data-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.show-more-data-container > div p {
+    margin: 25px 0;
+}
