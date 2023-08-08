@@ -48,7 +48,7 @@ function App() {
       <>
         <Header />
       </>
-      <button onClick={toggleDarkMode}>Dark Mode</button>
+      <button onClick={toggleDarkMode} className="glow-on-hover">Dark Mode</button>
       <main>
         <div className="cohort-list">
           <CohortList cohorts={uniqueCohorts} selectCohort={handleCohortSelection} />
