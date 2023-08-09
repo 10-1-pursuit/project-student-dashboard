@@ -1,0 +1,51 @@
+.show-more-data-container {
+  display: grid;
+  grid-template-columns: 220px 1fr 1fr;
+}
+
+.show-more-data-container > div p {
+  margin: 25px 0;
+}
+
+.one-on-one-container {
+  margin-top: 25px;
+}
+
+.one-on-one_form {
+  border: 1px solid black;
+  margin-top: 25px;
+  padding: 20px 20px;
+}
+
+.one-on-one_input {
+  margin: 15px 15px;
+}
+
+.one-on-one_input label {
+  margin-right: 15px;
+}
+
+.one-on-one_button {
+  margin: 0px 15px;
+  background-color: rgb(29, 173, 55);
+  color: white;
+  padding: 5px 5px;
+}
+
+.one-on-one_ul {
+  margin: 15px 50px;
+  list-style: disc;
+}
+
+.show-more-data-container > div p {
+  margin: 25px 0;
+}
+
+.reduce {
+  font-size: small;
+  color: rgb(29, 173, 55);
+}
+
+show-more-data-container {
+  border-top: 2px solid rgb(29, 173, 55);
+}

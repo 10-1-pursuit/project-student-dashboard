@@ -1,0 +1,63 @@
+.student-section-container {
+  padding: 10px 10px;
+  display: grid;
+  width: 70%;
+  margin-top: 10px;
+}
+
+.student-section-container h2 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.student-container__dob span {
+  color: rgb(29, 173, 55);
+  font-size: medium;
+}
+
+.student-container {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  border: 1px solid rgb(29, 173, 55);
+  padding: 10px 10px;
+  margin: 10px 10px;
+}
+
+.student-container img {
+  width: 150px;
+}
+
+.student-container__h4 {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.student-container__username {
+  margin-top: 5px;
+}
+
+.student-container__dob {
+  margin-top: 5px;
+}
+
+.student-container__show-more {
+  margin-top: 15px;
+}
+
+p.student-container__on-track-to-grad {
+  margin-top: 15px;
+  font-weight: bolder;
+}
+
+h2 {
+  text-indent: 20px;
+}
+
+.indent {
+  text-indent: 20px;
+}
+
+.on-track {
+  color: rgb(29, 173, 55);
+}

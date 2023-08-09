@@ -1,0 +1,25 @@
+.App {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.sidebar {
+  padding: 10px 10px;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.sidebar-list {
+  padding: 15px 15px;
+  margin: 25px 25px;
+  border-bottom: 1px solid rgb(29, 173, 55);
+  font-weight: bold;
+}
+
+.container-grid {
+  display: flex;
+}
