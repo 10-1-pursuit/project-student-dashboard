@@ -1,5 +1,7 @@
 # Student Dashboard Project
 
+My live URL https://clever-creponne-7d44a7.netlify.app
+
 For this assignment, you will build a student dashboard that will make use of already existing data stored in a JSON file. Users will be able to view students in several ways as well as add comments to those students.
 
 ## Project scoring

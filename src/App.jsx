@@ -1,10 +1,55 @@
+import studentData from "./data/data.json"
+import "./index.css"
+import { useState } from "react"
+
+import StudentCard from "./componnents/StudentCard"
+import CohortList from "./componnents/CohortList"
+import StudentDetails from "./componnents/StudentDetails"
+
+
+
+
+
+
 
 function App() {
+
+
+  const [studentArray, setStudentArray] = useState(studentData)
+
+  const studentsToRender = studentArray.map(
+    (eachStudentObj) => {
+
+      return (
+
+        <StudentCard eachStudentObj={eachStudentObj} />
+
+      )
+    })
+
   return (
-    <div>
-      <h1>Student Dashboard</h1>
-    </div>
+    <>
+
+      <div>
+        <header>
+          <h1>Student Dashboard</h1>
+        </header>
+      </div>
+      <main>
+        <div className="class">
+          < CohortList setStudentArray={setStudentArray} />
+
+        </div>
+        <div id="imgs">
+          <h1> All Students</h1>
+          {studentsToRender}
+        </div>
+      </main >
+      <StudentDetails studentData={studentData}/>
+    </>
   );
 }
 
-export default App;
+
+export default
+  App
