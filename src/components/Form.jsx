@@ -26,11 +26,11 @@ function Form() {
       <h4>1-on-1 Notes</h4>
       <form onSubmit={handleSubmit}>
         <div className="form">
-          <label htmlFor="commentor-name-">Commentor Name</label>
+          <label htmlFor="commentor-name">Commentor Name</label>
           <input
             type="text"
             name="commentor-name"
-            id="commentor-name"
+            id="commentor"
             onChange={(e) => setCommentorName(e.target.value)}
             value={commentorName}
           />

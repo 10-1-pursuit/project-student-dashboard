@@ -7,7 +7,7 @@ function Kpi({ student }) {
   return (
     <div className="kpi">
       <div className="code-wars">
-        <h3>CodeWars:</h3>
+        <h3>Code Wars:</h3>
         <p>
           <span>Current Total: </span>
           {student.codewars.current.total}
@@ -21,21 +21,25 @@ function Kpi({ student }) {
           {student.codewars.goal.total}
         </p>
         <p>
-          <span>Percent of Goal Achieved: </span>
-          {Math.trunc(
+          <span>Percent of Goal Achieved: </span>{" "}
+          {Math.floor(
             (student.codewars.current.total / student.codewars.goal.total) * 100
-          )}
+         ) }
         </p>
       </div>
       <div className="scores">
         <h3>Scores</h3>
         <p>
-          <span>Assignments: </span>
+            <span>Assessments: </span>
+            {student.cohort.scores.assessments * 100}%
+            </p>
+            <p>
+              <span>Assignments: </span>
           {student.cohort.scores.assignments * 100}%
         </p>
         <p>
-          <span>Projects:</span>
-          {student.cohort.scores.assessments * 100}%
+          <span>Project:</span>
+          {student.cohort.scores.projects * 100}%
         </p>
       </div>
       <div className="certifications">
