@@ -48,6 +48,7 @@ function StudentCardsFall25() {
 
         return (
             <>
+            
             <div className="layout" key={Math.random()*100000}>
                 
                 <section key={eachStudent.id}><img src={eachStudent.profilePhoto} /><div>
@@ -91,7 +92,7 @@ function StudentCardsFall25() {
                 <section><p className="student-name"> {eachStudent.names.preferredName}  {eachStudent.names.middleName} {eachStudent.names.surname}</p>
                     <p>{eachStudent.username}</p>
                     <p>BirthDay : {eachStudent.dob}</p>
-                    <p>Cohort: {eachStudent.cohort.cohortCode}</p>
+                    <p>Cohort: {eachStudent.cohort.cohortCode.slice(0,4)+" "+(eachStudent.cohort.cohortCode.slice(4))}</p>
                     <p>{eachStudent.certifications.resume&&eachStudent.certifications.linkedin
          &&eachStudent.certifications.github&& eachStudent.certifications.mockInterview?onTrack:offTrack}</p>
          <div id={eachStudent.id}>< OneOnOneForm id={eachStudent.id}/></div>
@@ -113,7 +114,7 @@ function StudentCardsFall25() {
             </div></>);
     })
 
-    return (<div  className="fall2025" hidden="hidden"> {studentsToRender}</div>);
+    return (<div  className="fall2025" hidden="hidden"><h1>Fall 2025 Students</h1>{studentsToRender}</div>);
 
 }
 

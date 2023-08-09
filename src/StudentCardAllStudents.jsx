@@ -32,6 +32,7 @@ return count
 
         return (
             <>
+          
             <div className="layout" key={Math.random()*100000}>
                 
                 <section key={eachStudent.id}><img src={eachStudent.profilePhoto} /><div>
@@ -101,7 +102,7 @@ return count
     {/* <div>{classCount()}</div> */}
     
     
-    <div className="all-students" >Count of Students:{classCount()}{studentsToRender}</div></>);
+    <div className="all-students" ><h1>All Students</h1>Count of Students:{classCount()}{studentsToRender}</div></>);
 
 }
 

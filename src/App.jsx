@@ -1,8 +1,8 @@
 import TopBar from "./TopBar";
 import StudentList from "./StudentList";
 import  "./App.css"
-// import StudentCard from "./StudentCard";
- import StudentCards from "./StudentCard";
+
+//  import StudentCards from "./StudentCard";
  import StudentCardsAll from "./StudentCardAllStudents";
 import data from "../src/data/data.json"
 
@@ -66,17 +66,18 @@ const CommenterUpdater= document.querySelector('input#commenter')
        
           
           <section key="card"id="Student-Card">
-           <section> <StudentCardsAll /></section>
-          <section><StudentCards/></section>
-          <section><StudentCardsFall26/></section>
+         <section> <StudentCardsAll /></section>
+          {/* <section><StudentCards/></section> */}
+      <section><StudentCardsFall26/></section>
+          <section><WinterClone/></section>
           
           <section><StudentCardsSummer26/></section>
-          <section><StudentCardsSpring26/></section>
-          <section><StudentCardsWinter25/></section>
-           <section><StudentCardsFall25/></section> 
+        <section><StudentCardsSpring26/></section>
+      <section><StudentCardsWinter25/></section>
+          <section><StudentCardsFall25/></section> 
            <section><StudentCardsSummer25/></section>
-           <section><StudentCardSpring25/></section>
-           <section><WinterClone/></section>
+       <section><StudentCardSpring25/></section>
+           
           </section>
 
 

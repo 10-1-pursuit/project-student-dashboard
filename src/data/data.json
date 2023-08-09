@@ -26,7 +26,7 @@
       }
     ],
     "cohort": {
-      "cohortCode": "Winter2025",
+      "cohortCode": "Winter 2025",
       "cohortStartDate": "12/1/25",
       "scores": { "assignments": 0.71, "projects": 0.7, "assessments": 0.66 }
     }

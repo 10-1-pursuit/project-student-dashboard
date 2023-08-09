@@ -1,5 +1,5 @@
-import StudentCards from "./StudentCard";
-import StudentCardsAll from "./StudentCardAllStudents";
+// import StudentCards from "./StudentCard";
+// import StudentCardsAll from "./StudentCardAllStudents";
 export default function StudentList() {
 
     function handleCohort(){
