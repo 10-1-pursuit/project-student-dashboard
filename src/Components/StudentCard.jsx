@@ -1,5 +1,5 @@
 import { useState} from "react";
-
+import "./StudentCard.css"
 
 const StudentCard =({eachStudentToListObjToRender})=>{
     const[seeStudentCardDetails, setSeeStudentCardDetails]=useState(false)
@@ -35,7 +35,7 @@ const StudentCard =({eachStudentToListObjToRender})=>{
 
         return(
         setDisplayStudentCardDetails(
-            <div>
+            <div className="student-details">
                 <h3>Codewars:</h3>
                     <ul>Current Total: {eachStudentToListObjToRender.codewars.current.total}</ul>
                     <ul>Last Week: {eachStudentToListObjToRender.codewars.current.lastWeek}</ul>
@@ -89,12 +89,12 @@ const StudentCard =({eachStudentToListObjToRender})=>{
 
 
     return(
-        <div className="student-details">
-        <img src={eachStudentToListObjToRender.profilePhoto} alt={eachStudentToListObjToRender.names.preferredName}/>
-        <h3>{eachStudentToListObjToRender.names.preferredName} {eachStudentToListObjToRender.names.middleName.charAt(0)}. {eachStudentToListObjToRender.names.surname}</h3>
-        <h4>{eachStudentToListObjToRender.username}</h4>
-        <h4>Birthday: {eachStudentToListObjToRender.dob}</h4>
-        <h4>{textForOnOrOffTrack}</h4>
+        <div className="student-profile">
+        <img id="pic"src={eachStudentToListObjToRender.profilePhoto} alt={eachStudentToListObjToRender.names.preferredName}/>
+        <h3 id="full-name">{eachStudentToListObjToRender.names.preferredName} {eachStudentToListObjToRender.names.middleName.charAt(0)}. {eachStudentToListObjToRender.names.surname}</h3>
+        <h4 id="username">{eachStudentToListObjToRender.username}</h4>
+        <h4 id="bday">Birthday: {eachStudentToListObjToRender.dob}</h4>
+        <h4 id="on-off-track">{textForOnOrOffTrack}</h4>
         <h5>{displayStudentCardDetails}</h5>
         <a onClick={(synthEvent)=>{handleSeeMoreOrLessDetailsToggle(), handleOnTrackStatus()}} >{textForSeeMoreOrLessDetails}</a>
       </div>
