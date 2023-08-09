@@ -15,6 +15,7 @@
     color: green;
     text-decoration: underline;
     cursor: pointer;
+    margin: 0;
 }
 
 .main-container {
@@ -25,20 +26,52 @@
     margin-right: 2rem;
 }
 
-.card-container {
+.student-card-container {
     display: flex;
     flex-direction: column;
+    width: 65%;
 }
 
-.list-title {
+.card-container {
+    display: flex;
+    flex-direction: row;
+    padding: 25px;
+    margin: 2rem;
+    border: 2px solid green;
+    width: 85%;
+}
+
+.badge-info-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 4%;
+
+}
+
+.badge-info {
+    flex-direction: column;
+    width: 35%;
+    margin: 0%
+}
+
+.student-img {
+    width: 15%;
+    height: 15%;
+    margin: 5%;
+    margin-top: 0%;
+    margin-left: 0%;
+}
+
+.cohort-list-title {
     text-align: center;
 }
 
 .cohort-selection {
     display: flex;
     flex-direction: column;
-    margin-right: 10%;
-    width: 45%;
+    margin-right: 5%;
+    width: 24%;
 }
 
 .list-item {
@@ -55,5 +88,6 @@
 }
 
 .student-count {
-    margin-top: 8.5%;
+    margin-top: 1%;
+    margin-bottom: 2%;
 }

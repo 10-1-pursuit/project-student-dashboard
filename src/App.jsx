@@ -1,6 +1,5 @@
 // import data from "./data/data.json";
-import { AllStudentsPreview } from "./Components/Student-Info.jsx";
-import ViewInfo from "./Components/view-info";
+import {StudentCards, ViewInfo} from "./Components/Student-Info.jsx";
 import CohortList from "./Components/cohort-list";
 
 // const[viewTitle, setViewTitle] = useState("All Students");
@@ -16,14 +15,16 @@ function App() {
 
       <section className="main-container">
         <div className="cohort-selection">
-          <h2 className="list-title">Choose a Class by Start Date</h2>
+          <h2 className="cohort-list-title">Choose a Class by Start Date</h2>
           <h3 key={0.5} className="list-item">All Students</h3>
           <CohortList />
         </div>
-        
-        <section className="student-card-list">
-        <ViewInfo />
-          {AllStudentsPreview}
+
+        <section className="student-card-container">
+          <ViewInfo />
+          <div>
+            <StudentCards />
+          </div>
           </section>
       </section>
     </>
