@@ -6,6 +6,13 @@ import OneOnOneForm from "./1on1"
 
 
 function StudentCardsWinter25() {
+    function classCount(){ 
+    
+        const count=data.filter((el)=>{return el.cohort.cohortCode==="Spring2025"})
+    
+    return count.length
+    }
+     
   
 
     const studentsToRender = data.map((eachStudent) => {
@@ -116,7 +123,7 @@ function StudentCardsWinter25() {
             </div></>);
     })
 
-    return (<div  className="winter2026" hidden="hidden"> <h1>Winter 2026 Students</h1>{studentsToRender}</div>);
+    return (<div  className="winter2026" hidden="hidden"> <h1>Winter 2026 Students</h1><p><strong>Count of Students In Cohort: {classCount()}</strong></p>{studentsToRender}</div>);
 
 }
 

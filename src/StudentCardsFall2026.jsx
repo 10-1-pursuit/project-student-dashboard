@@ -6,18 +6,13 @@ import OneOnOneForm from "./1on1"
 
 
 function StudentCardsFall26() {
-    // function classCount(){ 
-    //    myCount=  data.length
-
+    function classCount(){ 
     
-    //     // // const count=data.length 
-    //      if(eachStudent.cohort.cohortCode==="Fall2026")
+        const count=data.filter((el)=>{return el.cohort.cohortCode==="Fall2026"})
     
-    
-    //  return myCount
-         
-         
-    // }
+    return count.length
+    }
+     
      
 
 
@@ -102,7 +97,7 @@ function StudentCardsFall26() {
                 </div></>);
     })
 
-    return (<div className="fall2026" hidden="hidden"><h1>Fall 2026 Students</h1> {studentsToRender}</div>);
+    return (<div className="fall2026" hidden="hidden"><h1>Fall 2026 Students</h1> <p><strong>Count of Students in Cohort : {classCount()}</strong></p>{studentsToRender}</div>);
 
 }
 

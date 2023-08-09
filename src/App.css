@@ -95,3 +95,4 @@ div#table{background-color:blanchedalmond;}
 
  body{background-color: bisque;}
  body::backdrop{opacity: 50%;}
+ li{padding:10px}

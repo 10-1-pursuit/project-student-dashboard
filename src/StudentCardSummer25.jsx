@@ -6,12 +6,12 @@ import OneOnOneForm from "./1on1"
 
 
 function StudentCardsSummer25() {
-    // function classCount(){ 
+    function classCount(){ 
     
-    //     const count=document.querySelector('div.summer2025').children.length
+        const count=data.filter((el)=>{return el.cohort.cohortCode==="Summer2025"})
     
-    // return count
-    // }
+    return count.length
+    }
   
 
     const studentsToRender = data.map((eachStudent) => {
@@ -119,7 +119,7 @@ function StudentCardsSummer25() {
             </div></>);
     })
 
-    return (<div  className="summer2025" hidden="hidden" > <h1>Summer 2025 Students</h1>{studentsToRender}</div>);
+    return (<div  className="summer2025" hidden="hidden" > <h1>Summer 2025 Students</h1><p><strong>Count of Students in Cohort: {classCount()}</strong></p>{studentsToRender}</div>);
 
 }
 

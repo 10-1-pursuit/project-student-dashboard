@@ -23,10 +23,12 @@ function StudentCardsSpring25() {
 
     function classCount(){ 
     
-        const count=document.querySelector('div.spring2025').children.length
+        const count=data.filter((el)=>{return el.cohort.cohortCode==="Spring2025"})
     
-    return count
+    return count.length
     }
+     
+
     const studentsToRender = data.map((eachStudent) => {
         // const[ifTrue,setIfTrue]=useState(false)
         const myDiv = document.querySelector("table")
@@ -107,7 +109,7 @@ function StudentCardsSpring25() {
 
     return (<div 
         
-        className="spring2025" hidden="hidden"><h1>Spring 2025 Students</h1> {studentsToRender}</div>);
+        className="spring2025" hidden="hidden"><h1>Spring 2025 Students</h1><p><strong>Count of Students in Cohort: {classCount()}</strong></p>{studentsToRender}</div>);
 
 }
 

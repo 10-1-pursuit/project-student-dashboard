@@ -67,9 +67,9 @@ const CommenterUpdater= document.querySelector('input#commenter')
           
           <section key="card"id="Student-Card">
          <section> <StudentCardsAll /></section>
-          {/* <section><StudentCards/></section> */}
+         <section><WinterClone/></section>
       <section><StudentCardsFall26/></section>
-          <section><WinterClone/></section>
+         
           
           <section><StudentCardsSummer26/></section>
         <section><StudentCardsSpring26/></section>

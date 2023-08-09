@@ -6,6 +6,14 @@ import OneOnOneForm from "./1on1";
 
 
 function StudentCardsFall25() {
+
+    function classCount(){ 
+    
+        const count=data.filter((el)=>{return el.cohort.cohortCode==="Fall2025"})
+    
+    return count.length
+    }
+     
     
   
 
@@ -114,7 +122,7 @@ function StudentCardsFall25() {
             </div></>);
     })
 
-    return (<div  className="fall2025" hidden="hidden"><h1>Fall 2025 Students</h1>{studentsToRender}</div>);
+    return (<div  className="fall2025" hidden="hidden"><h1>Fall 2025 Students</h1><p><strong>Count of Students In Cohort: {classCount()}</strong></p>{studentsToRender}</div>);
 
 }
 

@@ -102,7 +102,7 @@ return count
     {/* <div>{classCount()}</div> */}
     
     
-    <div className="all-students" ><h1>All Students</h1>Count of Students:{classCount()}{studentsToRender}</div></>);
+    <div className="all-students" ><h1>All Students</h1><p><strong>Count of Students in Cohort:{classCount()}</strong></p>{studentsToRender}</div></>);
 
 }
 
