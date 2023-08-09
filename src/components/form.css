@@ -1,0 +1,15 @@
+.notes{
+    display: flexbox;
+    flex-direction: column;
+    width: 500px;
+
+}
+.notes label{
+    display: flex;
+    margin-right: 15px;
+
+}
+.notes input{
+    margin: 15px 15px;
+}
+

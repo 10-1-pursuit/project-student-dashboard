@@ -1,0 +1,31 @@
+h2{
+    font-family: sans-serif;
+}
+ul{
+    list-style: none;
+}
+ul{
+    list-style: none;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    column-gap: 25px;
+    row-gap: 25px;
+}
+img{
+    width: 100px;
+    height: 100px
+}
+
+span{
+    color: blue;
+}
+.form{
+    margin: 2px solid black;
+}
+.notes{
+    border-top: 2px solid blue;
+}
