@@ -14,8 +14,8 @@ function StudentCardsWinter26() {
         const [shows, SetShows] = useState('true')
         const [hasIt, SetHasIt] = useState("✅");
         const [doesntHaveIt, SetDoenstHaveIt] = useState("❌")
-        const[offTrack,SetOffTrack]=useState(<>OFF TRACK</>)
-        const[onTrack,SetOnTrack]=useState(<>ON TRACK TO GRADUATE</>)
+        const[offTrack,SetOffTrack]=useState(<>OFF TRACK📚⏳</>)
+        const[onTrack,SetOnTrack]=useState(<>ON TRACK TO GRADUATE🎓</>)
         const count=document.querySelector('div.winter2026').children.length
 
         
@@ -35,7 +35,7 @@ function StudentCardsWinter26() {
                     <section><p className="student-name"> {eachStudent.names.preferredName}  {eachStudent.names.middleName} {eachStudent.names.surname}</p>
                         <p>{eachStudent.username}</p>
                         <p>BirthDay : {eachStudent.dob}</p>
-                        <p>{eachStudent.cohort.cohortCode}</p>
+                        <p>Cohort : {eachStudent.cohort.cohortCode}</p>
                         <p>{eachStudent.certifications.resume&&eachStudent.certifications.linkedin
          &&eachStudent.certifications.github&& eachStudent.certifications.mockInterview?onTrack:offTrack}</p>
                 

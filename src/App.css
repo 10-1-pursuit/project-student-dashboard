@@ -5,14 +5,15 @@ header {
     color: var(--light);
     padding: 25px 0;
     text-align: center;
-    background-color: rgb(47, 255, 161);
+    background-color:blanchedalmond;
     width: auto;
+    border :3px solid black
   }
   
   header h1 {
     font-size: 42px;
     font-weight: 300;
-    color: aliceblue;
+    color: darkkhaki;
   }
   
   header h1 span {
@@ -34,7 +35,7 @@ header {
     /* margin: 25px auto; */
     width: fit-content;
   }
- p.student-name{color: rgb(0, 255, 81);text-align: center;display: inline;;
+ p.student-name{color:goldenrod; display: inline;;
     
     ;margin: 25px auto;
     width: fit-content;}   
@@ -46,7 +47,7 @@ header {
         width: 60%;
     } */
 
-    section#Student-Card{border: 2px solid red;width:fit-content}
+    section#Student-Card{border: 2px solid rgb(249, 249, 249);width:fit-content}
     section#Student-List{max-width: 200;}
 
 
@@ -75,10 +76,22 @@ div.notes{color: blueviolet;border:5px solid;text-align: center;width:max-conten
 p.comments{margin-top: 75px;}
         
 img{width: 175px;}
-div.layout{justify-content: flex-start;}
+div.layout{justify-content: flex-start; border-radius: 25px;width:450px; text-align: center;}
 form{width:20px
 }
 ul{text-align: left;pointer-events: auto;}
 
 div.App{border: 2px solid black }
- /* table{visibility:hidden;}   */
+img{border-radius: 23px;}
+
+button{border-radius: 25px;}
+
+div.App{border-radius: 25px;}
+div{padding: 20px;}
+div.App{width:200px;}
+
+div#table{background-color:blanchedalmond;}
+
+
+ body{background-color: bisque;}
+ body::backdrop{opacity: 50%;}

@@ -49,7 +49,7 @@ function StudentCardsFall26() {
                 <section><p className="student-name"> {eachStudent.names.preferredName}  {eachStudent.names.middleName} {eachStudent.names.surname}</p>
                     <p>{eachStudent.username}</p>
                     <p>BirthDay : {eachStudent.dob}</p>
-                    <p>{eachStudent.cohort.cohortCode}</p>
+                    <p> Cohort: {eachStudent.cohort.cohortCode}</p>
                     <br>
                     </br>
                     <br></br>
