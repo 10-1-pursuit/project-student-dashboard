@@ -11,7 +11,6 @@ const StudentCard =({eachStudentToListObjToRender})=>{
     const[hasGitHub, setHasGitHub] = useState("")
     const[hasMockInterview, setHasMockInterview] = useState("")
     const[oneOnOneSection, setOneOnOneSection] = useState("")
-
     function handleSeeMoreOrLessDetailsToggle(){
 
         setSeeStudentCardDetails(!seeStudentCardDetails)
@@ -41,7 +40,7 @@ const StudentCard =({eachStudentToListObjToRender})=>{
                     <ul>Current Total: {eachStudentToListObjToRender.codewars.current.total}</ul>
                     <ul>Last Week: {eachStudentToListObjToRender.codewars.current.lastWeek}</ul>
                     <ul>Goal: {eachStudentToListObjToRender.codewars.goal.total}</ul>
-                    <ul>Percentage Goal Achieved: </ul>
+                    <ul>Percentage Goal Achieved: {(eachStudentToListObjToRender.codewars.current.total / eachStudentToListObjToRender.codewars.goal.total).toFixed(2)*100}% </ul>
                 <h3>Scores:</h3>
                     <ul>Assignments: {eachStudentToListObjToRender.cohort.scores.assignments * 100}%</ul>
                     <ul>Projects: {eachStudentToListObjToRender.cohort.scores.projects * 100}%</ul>
@@ -52,21 +51,25 @@ const StudentCard =({eachStudentToListObjToRender})=>{
                     <ul>GitHub: {hasGitHub}</ul>
                     <ul>Mock Interview: {hasMockInterview}</ul>
                 <h3>1-on-1 Notes Section</h3>
-                    <form>
+                    <form onSubmit={(synthEvent)=>{synthEvent.preventDefault()
+                      eachStudentToListObjToRender.setNewCommenterNameFromForm("")
+                      eachStudentToListObjToRender.setNewCommentFromForm("")}}>
                       <label> 
                         Commenter Name
-                        <input type="text" />
+                        <input type="text" value={eachStudentToListObjToRender.newCommenterNameFromForm} 
+                          onChange={(synthEvent)=>{eachStudentToListObjToRender.setNewCommenterNameFromForm(synthEvent.target.value)}}/>
                       </label>
                         <br/>
                         <br/>
                       <label> 
                         Comment
-                        <input type="text"/>
+                        <input type="text" value={eachStudentToListObjToRender.newCommentFromForm}
+                          onChange={(synthEvent)=>{eachStudentToListObjToRender.setNewCommentFromForm(synthEvent.target.value)}}/>
                       </label>
                       <br/>
                       <br/>
                       <input type="submit" value="Add Note"/>
-                      <h5>{eachStudentToListObjToRender.notes.commenter} says, {eachStudentToListObjToRender.notes.comment}</h5>
+                      <h5>Alan R. says, {eachStudentToListObjToRender.names.preferredName} is a pleasure to work with</h5>
                     </form>
             </div>
         ))
@@ -79,15 +82,15 @@ const StudentCard =({eachStudentToListObjToRender})=>{
             eachStudentToListObjToRender.certifications.github === true &&
             eachStudentToListObjToRender.certifications.mockInterview === true &&
             eachStudentToListObjToRender.codewars.current.total > 600){
-            setTextForOnOrOffTrack("On Track")
+            setTextForOnOrOffTrack("On Track to Graduate")
         } else {
-            setTextForOnOrOffTrack("Off Track")
+            setTextForOnOrOffTrack("Off Track to Graduate")
         }}
 
 
     return(
-        <div >
-        <img src={eachStudentToListObjToRender.profilePhoto} alt=""/>
+        <div className="student-details">
+        <img src={eachStudentToListObjToRender.profilePhoto} alt={eachStudentToListObjToRender.names.preferredName}/>
         <h3>{eachStudentToListObjToRender.names.preferredName} {eachStudentToListObjToRender.names.middleName.charAt(0)}. {eachStudentToListObjToRender.names.surname}</h3>
         <h4>{eachStudentToListObjToRender.username}</h4>
         <h4>Birthday: {eachStudentToListObjToRender.dob}</h4>
@@ -101,38 +104,3 @@ const StudentCard =({eachStudentToListObjToRender})=>{
 
 export default StudentCard
 
-
-
-/*
-  {
-    "id": "D8-hEWB",
-    "names": {
-      "preferredName": "Israel",
-      "middleName": "Benjamin",
-      "surname": "Rodriguez"
-    },
-    "username": "israel.rodriguez@pursuit.org",
-    "dob": "2/3/1979",
-    "profilePhoto": "https://xsgames.co/randomusers/avatar.php?g=male&minimum_age=38&maximum_age=48",
-    "codewars": {
-      "current": { "total": 1804, "lastWeek": 144 },
-      "goal": { "total": 850, "lastWeek": 75 }
-    },
-    "certifications": {
-      "resume": false,
-      "linkedin": false,
-      "github": false,
-      "mockInterview": false
-    },
-    "notes": [
-      {
-        "commenter": "Alan R.",
-        "comment": "Israel is a pleasure to work with!"
-      }
-    ],
-    "cohort": {
-      "cohortCode": "Winter2025",
-      "cohortStartDate": "12/1/25",
-      "scores": { "assignments": 0.71, "projects": 0.7, "assessments": 0.66 }
-    }
-*/
