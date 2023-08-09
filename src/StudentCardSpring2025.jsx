@@ -35,7 +35,7 @@ function StudentCardsSpring25() {
         const [hasIt, SetHasIt] = useState("✅");
         const [doesntHaveIt, SetDoenstHaveIt] = useState("❌")
         const [shows, SetShows] = useState('true')
-        const[offTrack,SetOffTrack]=useState(<>OFF TRACK📚📚</>)
+        const[offTrack,SetOffTrack]=useState(<>OFF TRACK📚⏳</>)
         const[onTrack,SetOnTrack]=useState(<>ON TRACK TO GRADUATE🎓</>)
 
         if (eachStudent.cohort.cohortCode === "Spring2025")
