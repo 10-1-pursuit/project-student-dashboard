@@ -47,4 +47,13 @@
     padding-left: 15px;
     padding-bottom: 10px;
     border-bottom: 2px solid green;
+    cursor: pointer;
+}
+
+.view-title {
+    margin-bottom: 0%;
+}
+
+.student-count {
+    margin-top: 8.5%;
 }

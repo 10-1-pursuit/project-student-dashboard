@@ -13,5 +13,6 @@ const AllStudentsPreview =
             </div>
         )
     });
+const Winter2026 = []
 
 export { AllStudentsPreview };

@@ -30,7 +30,7 @@ const StudentCohortsArray = [...StudentCohortsSet].sort((a, b) => {
 // console.log(StudentCohortsArray);
 
 const ListOfCohorts = StudentCohortsArray.map((cohort) =>
-    <h3 key={cohort.indexOf()} className="list-item">{cohort}</h3>
+    <h3 key={StudentCohortsArray.indexOf(cohort)} className="list-item">{cohort}</h3>
 );
 
 
