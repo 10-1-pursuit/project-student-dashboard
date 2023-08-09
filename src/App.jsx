@@ -1,3 +1,7 @@
+import React, {useState} from "react";
+import studentData from "./data/data.json"
+import Header from "./Header.jsx"
+
 
 function App() {
   return (
