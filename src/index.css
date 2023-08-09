@@ -1,0 +1,32 @@
+.container{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    background-color: #27c50e;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+    
+
+
+
+
+
+
+
+.dashboard-content {
+    display:grid;
+    gap:.3rem ;
+}
+.student-box {
+  border: 1px solid #27c50e;
+  padding: 10px;
+  position: relative
+}
+
+  .student-cohort {
+    border: 1px solid #27c50e;
+    padding: 10px;
+  }
+  
+  
