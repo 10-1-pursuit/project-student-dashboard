@@ -79,4 +79,6 @@ div.layout{justify-content: flex-start;}
 form{width:20px
 }
 ul{text-align: left;pointer-events: auto;}
+
+div.App{border: 2px solid black }
  /* table{visibility:hidden;}   */

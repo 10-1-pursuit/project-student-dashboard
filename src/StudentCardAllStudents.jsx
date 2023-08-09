@@ -52,7 +52,7 @@ return count
                     <a><button onClick={()=>SetShows(!shows)}>ShowMore.....</button></a>
                     <a><button onClick={()=>SetShows(!shows)}>ShowLess.....</button></a>
                     {shows && (
-                    <div id="table"><table id ={eachStudent.id}>
+                    <div id="table" ><table id ={eachStudent.id}>
                         <th className="top1">CodeWars</th>
                         
                         <th className="top2">Scores</th>
