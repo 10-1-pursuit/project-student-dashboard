@@ -6,6 +6,26 @@ import OneOnOneForm from "./1on1"
 
 
  function StudentCardsAll() {
+
+    function  stringFilter(str){
+
+
+        if(str.length =="10"){
+    
+         return  console.log(str.slice(0,6)+" "+str.slice(6))
+        }
+    
+         
+
+          
+    
+    
+    
+            
+            }
+           
+        
+    
 function classCount(){ 
     
     const count=studentsToRender.length 
@@ -76,7 +96,8 @@ return count
                 <section><p className="student-name"> {eachStudent.names.preferredName}  {eachStudent.names.middleName} {eachStudent.names.surname}</p>
                     <p>{eachStudent.username}</p>
                     <p>BirthDay : {eachStudent.dob}</p>
-                    <p>Cohort : {eachStudent.cohort.cohortCode}</p>
+                    <p>Cohort : {eachStudent.cohort.cohortCode.includes("Fall")? (eachStudent.cohort.cohortCode.slice(0,4)+" "+eachStudent.cohort.cohortCode.slice(4)):(eachStudent.cohort.cohortCode.slice(0,6)+" "+eachStudent.cohort.cohortCode.slice(6))}</p>
+                    
                     <p>{eachStudent.certifications.resume&&eachStudent.certifications.linkedin
          &&eachStudent.certifications.github&& eachStudent.certifications.mockInterview?onTrack:offTrack}</p>
          <div id={eachStudent.id}>< OneOnOneForm id={eachStudent.id}/></div>
