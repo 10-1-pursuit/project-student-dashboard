@@ -10,6 +10,7 @@ const StudentCard =({eachStudentToListObjToRender})=>{
     const[hasLinkedIn, setHasLinkedIn] = useState("")
     const[hasGitHub, setHasGitHub] = useState("")
     const[hasMockInterview, setHasMockInterview] = useState("")
+    const[oneOnOneSection, setOneOnOneSection] = useState("")
 
     function handleSeeMoreOrLessDetailsToggle(){
 
@@ -50,6 +51,23 @@ const StudentCard =({eachStudentToListObjToRender})=>{
                     <ul>LinkedIn: {hasLinkedIn}</ul>
                     <ul>GitHub: {hasGitHub}</ul>
                     <ul>Mock Interview: {hasMockInterview}</ul>
+                <h3>1-on-1 Notes Section</h3>
+                    <form>
+                      <label> 
+                        Commenter Name
+                        <input type="text" />
+                      </label>
+                        <br/>
+                        <br/>
+                      <label> 
+                        Comment
+                        <input type="text"/>
+                      </label>
+                      <br/>
+                      <br/>
+                      <input type="submit" value="Add Note"/>
+                      <h5>{eachStudentToListObjToRender.notes.commenter} says, {eachStudentToListObjToRender.notes.comment}</h5>
+                    </form>
             </div>
         ))
         
@@ -65,7 +83,8 @@ const StudentCard =({eachStudentToListObjToRender})=>{
         } else {
             setTextForOnOrOffTrack("Off Track")
         }}
-        
+
+
     return(
         <div >
         <img src={eachStudentToListObjToRender.profilePhoto} alt=""/>
