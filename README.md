@@ -32,5 +32,6 @@ This project included some existing code to connect all the features.
  
 
 ## Deployed Application
-  
-[My Student Dashboard Application URL]([https://ephemeral-chimera-961557.netlify.app/])
+
+[`My Student Dashboard Application URL`]([https://ephemeral-chimera-961557.netlify.app/])  
+
