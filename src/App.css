@@ -1,11 +1,11 @@
-*{margin:0}
+*{margin:0;font-weight:800;font-family:fantasy}
 header {
     background: var(--dark);
     border-bottom: 3px solid var(--primary);
     color: var(--light);
     padding: 25px 0;
     text-align: center;
-    background-color:blanchedalmond;
+    background-color:rgba(255, 255, 255, 0.696);
     width: auto;
     border :3px solid black
   }
@@ -13,7 +13,7 @@ header {
   header h1 {
     font-size: 42px;
     font-weight: 300;
-    color: darkkhaki;
+    color: rgb(205, 193, 30);
   }
   
   header h1 span {
@@ -35,7 +35,7 @@ header {
     /* margin: 25px auto; */
     width: fit-content;
   }
- p.student-name{color:goldenrod; display: inline;;
+ p.student-name{color:black; display: inline;;
     
     ;margin: 25px auto;
     width: fit-content;}   
@@ -51,7 +51,7 @@ header {
     section#Student-List{max-width: 200;}
 
 
-    div.layout{border:2px solid black;grid-template-columns: 1fr 1fr;display: grid; }
+    div.layout{border:2px solid black;grid-template-columns: 1fr 2fr;display: grid; }
 
     th, td {
         padding: 15px;
@@ -93,6 +93,29 @@ div.App{width:200px;}
 div#table{background-color:blanchedalmond;}
 
 
- body{background-color: bisque;}
+ body{background-color:rgba(230, 214, 214, 0.557); background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGZ-8HJXSoM6yqD7U4Bm72WR3TYZgCE0zZnQ&usqp=CAU");
+backface-visibility: inherit;background-repeat:repeat-x;
+}
  body::backdrop{opacity: 50%;}
  li{padding:10px}
+
+ p.track{border:8px solid gold;}
+
+ p.track1{border: 8px solid red;}
+
+ p.track2{border:8px solid rebeccapurple;}
+ p.track3{border:8px solid rgb(113, 228, 7);}
+ p.track4{border:8px solid blue;}
+ p.track5{border:8px solid whitesmoke;}
+ p.track6{border:8px solid orange}
+ p.track7{border:8px solid black}
+
+ p.track8{border:8px solid silver}
+ div#spg26.layout{background-color: azure;}
+ div#sum26.layout{background-color:lightsalmon;}
+ div#fal26.layout{background-color: lightgoldenrodyellow;}
+ div#wi26.layout{background-color:lightpink;}
+ div#all.layout{background-color: rgb(175, 193, 245);}
+ div#fal25.layout{background-color: plum;}
+ div#sum25.layout{background-color: mistyrose;}
+ div#spr25.layout{background-color: rgb(233, 182, 94);}

@@ -58,7 +58,7 @@ function StudentCardsWinter25() {
             <>
   
             
-            <div className="layout" key={Math.random()*100000}>
+            <div className="layout" id="wi26"key={Math.random()*100000}>
                 
                 <section key={eachStudent.id}><img src={eachStudent.profilePhoto} /><div>
 
@@ -98,11 +98,11 @@ function StudentCardsWinter25() {
 
 </table></div>)}</div></section>
 
-                <section><p className="student-name"> {eachStudent.names.preferredName}  {eachStudent.names.middleName} {eachStudent.names.surname}</p>
-                    <p>{eachStudent.username}</p>
+                <section><p className="student-name"> <h1>{eachStudent.names.preferredName}  {eachStudent.names.middleName} {eachStudent.names.surname}</h1></p>
+                    <p><strong>{eachStudent.username}</strong></p>
                     <p>BirthDay : {eachStudent.dob}</p>
                     <p> Cohort: {eachStudent.cohort.cohortCode.slice(0,6)+" "+(eachStudent.cohort.cohortCode.slice(6))}</p>
-                    <p>{eachStudent.certifications.resume&&eachStudent.certifications.linkedin
+                    <p class="track7">{eachStudent.certifications.resume&&eachStudent.certifications.linkedin
          &&eachStudent.certifications.github&& eachStudent.certifications.mockInterview?onTrack:offTrack}</p>
          <div id={eachStudent.id}>< OneOnOneForm id={eachStudent.id}/></div>
                 
