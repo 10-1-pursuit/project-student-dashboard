@@ -1,0 +1,51 @@
+
+.section-divider{
+    display: grid;
+    grid-template-columns: 35% 65%;
+} 
+
+header {
+  background-color: rgb(75, 139, 174);
+  height: 225px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  font-size: 65px;
+}
+.student-profile {
+  display: grid;
+  grid-template-columns: 10% 55% 25%;
+  border: 1px solid rgb(197, 33, 15);
+   padding: 10px 10px;
+  margin: 10px 10px; 
+} 
+.student-profile img{
+    width: 125px;
+    height: 150px;
+}
+.profile p span{
+  position: relative;
+ left: 20%;
+ top:-1rem;
+   /* border-style: hidden; */
+   padding: 4%
+}
+.profile h3 {
+  position: relative;
+ left: 20%;
+ 
+   /* border-style: hidden; */
+   padding: 3%
+}
+
+.sidebar{
+padding: 15px 15px;
+  margin: 25px 25px;
+  border-bottom: 1px solid rgb(110, 79, 183);
+ font-weight: bold; 
+ list-style-type:none;
+}
