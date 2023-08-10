@@ -9,7 +9,7 @@ import SideBar from "./Components/SideBar";
 function App() {
 
    const [studentList, setstudentList] = useState(SortedInAlphabeticalOrder(data));
-    const [cohortArray, setcohortArray] = useState([])
+    // const [cohortArray, setcohortArray] = useState([])
 
    function SortedInAlphabeticalOrder(data) {
      return data.sort((a, b) => {
