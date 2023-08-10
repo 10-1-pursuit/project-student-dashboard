@@ -1,32 +1,47 @@
-.container{
+.cohorts-container{
 
     display: grid;
     grid-template-columns: 1fr 1fr; 
-    background-color: #27c50e;
+    grid-column-gap: 300px;
+    background-color: #e6f0e5;
     padding: 20px;
     border-bottom: 1px solid #ccc;
 }
-    
 
 
-
-
-
-
-
-.dashboard-content {
-    display:grid;
-    gap:.3rem ;
-}
 .student-box {
-  border: 1px solid #27c50e;
-  padding: 10px;
-  position: relative
-}
+    border: 1px solid #27c50e;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .on-track {
+    background-color: #b0e57c; 
+  }
+  
+  .graduate-indicator {
+    color: green; 
+    font-weight: bold;
+  }
 
   .student-cohort {
     border: 1px solid #27c50e;
     padding: 10px;
   }
   
-  
+  .column-codewar {
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-column-gap: 1px;
+  }
+  .column-scores {
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-column-gap: 1px;
+  }
+  .container {
+    max-width: 98%;
+    margin: auto;
+    background-color: #b0e57c;
+    text-align: center;
+  }

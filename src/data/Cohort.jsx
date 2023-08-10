@@ -7,8 +7,19 @@ const Cohort = () => {
   const uniqueCohorts = [...new Set(studentsData.map(student => student.cohort.cohortCode))];
 
   const toggleCohort = (cohortCode) => {
-    setSelectedCohort(selectedCohort === cohortCode ? null : cohortCode);
+    if (selectedCohort === cohortCode) {
+      setSelectedCohort(null);
+    } else {
+      setSelectedCohort(cohortCode);
+    }
   };
+
+  const cohortsWithStudentCount = uniqueCohorts.map(cohortCode => ({
+    code: cohortCode,
+    studentCount: studentsData.filter(student => student.cohort.cohortCode === cohortCode).length
+  }));
+
+  const totalStudentCount = studentsData.length;
 
   const fellowsToRender = studentsData
     .filter(student => !selectedCohort || student.cohort.cohortCode === selectedCohort)
@@ -27,15 +38,18 @@ const Cohort = () => {
           className={`student-cohort ${selectedCohort === null ? 'active' : ''}`}
           onClick={() => toggleCohort(null)}
         >
-          <h3>All Students</h3>
+          <h3>All Students ({totalStudentCount} students)</h3>
         </div>
-        {uniqueCohorts.map(cohortCode => (
+        {cohortsWithStudentCount.map(cohort => (
           <div
-            key={cohortCode}
-            className={`student-cohort ${selectedCohort === cohortCode ? 'active' : ''}`}
-            onClick={() => toggleCohort(cohortCode)}
+            key={cohort.code}
+            className={`student-cohort ${selectedCohort === cohort.code ? 'active' : ''}`}
+            onClick={() => toggleCohort(cohort.code)}
           >
-            <h3>{cohortCode}</h3>
+            <h3>
+              {cohort.code}{' '}
+              {selectedCohort === cohort.code && `(${cohort.studentCount} students)`}
+            </h3>
           </div>
         ))}
       </div>
