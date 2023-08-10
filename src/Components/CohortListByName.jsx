@@ -1,14 +1,36 @@
-// import { useState } from "react"
+import { useState } from "react"
+import data from '../data/data.json'
 
 
 
+const CohortListByName=()=>{
+    // Javasripttuturial.net way below
+    const uniqueCohortList = [...new Map(data.map((d)=>[d.cohort.cohortCode, d])).values()]
+     console.log(uniqueCohortList) 
+    const cohortListForHomePage = uniqueCohortList.map(
+        (eachCohortNameForList)=>{
+        return(<div>
+            <h4 onClick={(synthEvent)=>{console.log(synthEvent.target.innerText)}}>{eachCohortNameForList.cohort.cohortCode}</h4>
+        </div>)
+        }
+    )
 
-// const CohortListByName=({eachCohortToListObjToRender})=>{
-//     // console.log(eachCohortToListObjToRender)
+
     
+    return(<>{cohortListForHomePage}</>)
 
 
-//     const[winter2025, setWinter2025]=useState("")
+}
+
+export default CohortListByName
+
+
+
+
+
+
+
+// const[winter2025, setWinter2025]=useState("")
 //     const[winter2025Toggle, setWinter2025Toggle]=useState(false)
 //     const[textForTitleToggle, settextForTitleToggle]=useState("Winter 2025")
 
@@ -38,7 +60,3 @@
 //             <h3 onClick={(synthEvent)=>{handleWinter2025Toggle(), handleWinter2025CohortList()}}>{textForTitleToggle}{winter2025}</h3>
 //             </div>
 //     )
-
-// }
-
-// export default CohortListByName
