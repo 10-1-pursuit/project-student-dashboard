@@ -1,6 +1,6 @@
 Welcome to my Cohort Student App.
 
-You can click on the list from the Bottom up and they will load in that order. All students is loaded on page load. A few minor bugs but will be updated in the future version.
+You can click on the list and all of the features work and are functional. All students is loaded on page load. The students are organized my Cohort. There is an on track card with each Students certifications. Tried to create the best U/I to my experience. There is a note section for each student where you can add notes and delete them as well. A few minor bugs but will be updated in the future version.
 Thanks
 
 
