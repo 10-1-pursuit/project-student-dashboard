@@ -1,0 +1,35 @@
+.student-details {
+    color:forestgreen;
+    border: solid;
+    padding: 10px;
+}
+
+a {
+    color:darkgreen;
+    text-decoration: underline;
+}
+
+.student-profile{
+    border: solid;
+    margin: 20px;
+    padding: 50px;
+}
+
+#pic {
+    border: solid;
+}
+
+#full-name {
+    font-weight: bolder;
+}
+#username {
+    font-weight: lighter;
+}
+#bday {
+    font-weight: lighter;
+    font-style: italic;
+}
+#on-off-track {
+    font-style:italic;
+    color:darkslategray;
+}
