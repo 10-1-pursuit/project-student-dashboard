@@ -110,8 +110,9 @@ const CohortandStudentCards = () => {
 
     return (
         <>
+            <h1 className="landing-title">Student Dashboard</h1>
+
             <section className="main-container">
-                <h1 className="landing-title">Student Dashboard</h1>
                 <div className="cohort-selection">
                     <h2 className="cohort-list-title">Choose a Class by Start Date</h2>
                     <h3 onClick={(se) => clickedCohortEvent(se.target.innerText)} key={0.5} className="list-item">All Students</h3>
