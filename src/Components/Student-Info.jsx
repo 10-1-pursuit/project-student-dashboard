@@ -1,5 +1,6 @@
 import data from "../data/data.json";
 import { useState } from "react";
+import { Fragment } from "react";
 
 
 const CohortandStudentCards = () => {
@@ -7,11 +8,44 @@ const CohortandStudentCards = () => {
     const [viewTitle, setViewTitle] = useState("All Students");
     const [studentCount, setStudentCount] = useState(data.length);
     const [studentCohort, setStudentCohort] = useState(data);
+    const [showDetails, setShowDetails] = useState(false);
+
+    const toggleDetails = () => {
+        setShowDetails(!showDetails);
+    }
+
+    const StudentDetails = ({ showDetails, studentObj }) => {
+        if (showDetails) {
+            return (
+                <>
+                    <section className="student-details">
+                        <div className="codewars-container">
+                            <p><span className="green-text">Current Total:</span> {studentObj.codewars.current.total}</p>
+                            <p><span className="green-text">Last Week:</span> {studentObj.codewars.current.lastWeek}</p>
+                            <p><span className="green-text">Goal:</span> {studentObj.codewars.goal.total}</p>
+                            <p><span className="green-text">Percent of Goal Achieved:</span> {(100 * studentObj.codewars.current.total / studentObj.codewars.goal.total).toFixed(0)}%</p>
+                        </div>
+                        <div className="scores-container">
+                            <p><span className="green-text">Assignments:</span> {studentObj.cohort.scores.assignments * 100}</p>
+                            <p><span className="green-text">Projects:</span> {studentObj.cohort.scores.projects * 100}</p>
+                            <p><span className="green-text">Assessments:</span> {studentObj.cohort.scores.assessments * 100}</p>
+                        </div>
+                        <div className="certifications-container">
+                            <p><span className="green-text">Resume:</span>{studentObj.certifications.resume ? "✅" : "❌"}</p>
+                            <p><span className="green-text">LinkedIn</span>:{studentObj.certifications.linkedin ? "✅" : "❌"}</p>
+                            <p><span className="green-text">Mock Interview:</span>{studentObj.certifications.mockInterview ? "✅" : "❌"}</p>
+                            <p><span className="green-text">GitHub:</span>{studentObj.certifications.github ? "✅" : "❌"}</p>
+                        </div>
+                    </section>
+                </>
+            )
+        } return null;
+    }
 
     const studentstoRender =
         studentCohort.map((studentObj) => {
             return (
-                <>
+                <Fragment key={studentObj.id}>
                     < section className="card-container" >
                         <section className="student-top-info">
                             <img className="student-img" src={studentObj.profilePhoto} alt="Student Profile Photo" />
@@ -20,30 +54,12 @@ const CohortandStudentCards = () => {
                                 <p className="badge-info">{studentObj.username}</p>
                                 <p className="badge-info"><span className="green-text">Birthday:</span> {studentObj.dob}</p>
                                 <br />
-                                <p className="badge-expander">Show More...</p>
+                                <p className="badge-expander" onClick={toggleDetails}>{showDetails ? "Show Less" : "Show More..."} </p>
                             </div>
                         </section >
-                        <section className="student-details">
-                            <div className="codewars-container">
-                                <p><span className="green-text">Current Total:</span> {studentObj.codewars.current.total}</p>
-                                <p><span className="green-text">Last Week:</span> {studentObj.codewars.current.lastWeek}</p>
-                                <p><span className="green-text">Goal:</span> {studentObj.codewars.goal.total}</p>
-                                <p><span className="green-text">Percent of Goal Achieved:</span> {(100 * studentObj.codewars.current.total / studentObj.codewars.goal.total).toFixed(0)}%</p>
-                            </div>
-                            <div className="scores-container">
-                                <p><span className="green-text">Assignments:</span> {studentObj.cohort.scores.assignments * 100}</p>
-                                <p><span className="green-text">Projects:</span> {studentObj.cohort.scores.projects * 100}</p>
-                                <p><span className="green-text">Assessments:</span> {studentObj.cohort.scores.assessments * 100}</p>
-                            </div>
-                            <div className="certifications-container">
-                                <p><span className="green-text">Resume:</span>{studentObj.certifications.resume ? "✅" : "❌"}</p>
-                                <p><span className="green-text">LinkedIn</span>:{studentObj.certifications.linkedin ? "✅" : "❌"}</p>
-                                <p><span className="green-text">Mock Interview:</span>{studentObj.certifications.mockInterview ? "✅" : "❌"}</p>
-                                <p><span className="green-text">GitHub:</span>{studentObj.certifications.github ? "✅" : "❌"}</p>
-                            </div>
-                        </section>
+                        {showDetails ? <StudentDetails showDetails={showDetails} studentObj={studentObj} /> : null}
                     </section >
-                </>
+                </Fragment>
 
             )
         });
