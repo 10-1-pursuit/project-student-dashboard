@@ -8,11 +8,14 @@ const CohortandStudentCards = () => {
     const [viewTitle, setViewTitle] = useState("All Students");
     const [studentCount, setStudentCount] = useState(data.length);
     const [studentCohort, setStudentCohort] = useState(data);
-    const [showDetails, setShowDetails] = useState(false);
+    const [showDetailsState, setShowDetailsState] = useState({});
 
-    const toggleDetails = () => {
-        setShowDetails(!showDetails);
-    }
+    const toggleDetails = (studentId) => {
+        setShowDetailsState((prevState) => ({
+            ...prevState,
+            [studentId]: !prevState[studentId],
+        }));
+    };
 
     const StudentDetails = ({ showDetails, studentObj }) => {
         if (showDetails) {
@@ -44,8 +47,11 @@ const CohortandStudentCards = () => {
 
     const studentstoRender =
         studentCohort.map((studentObj) => {
+            const studentId = studentObj.id;
+            const areDetailsShowing = showDetailsState[studentId] || false;
+
             return (
-                <Fragment key={studentObj.id}>
+                <Fragment key={studentId}>
                     < section className="card-container" >
                         <section className="student-top-info">
                             <img className="student-img" src={studentObj.profilePhoto} alt="Student Profile Photo" />
@@ -54,10 +60,10 @@ const CohortandStudentCards = () => {
                                 <p className="badge-info">{studentObj.username}</p>
                                 <p className="badge-info"><span className="green-text">Birthday:</span> {studentObj.dob}</p>
                                 <br />
-                                <p className="badge-expander" onClick={toggleDetails}>{showDetails ? "Show Less" : "Show More..."} </p>
+                                <p className="badge-expander" onClick={ () => toggleDetails(studentId)}>{areDetailsShowing ? "Show Less" : "Show More..."}{" "} </p>
                             </div>
                         </section >
-                        {showDetails ? <StudentDetails showDetails={showDetails} studentObj={studentObj} /> : null}
+                        <StudentDetails showDetails={areDetailsShowing} studentObj={studentObj} />
                     </section >
                 </Fragment>
 
