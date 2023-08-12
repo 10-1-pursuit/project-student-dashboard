@@ -2,25 +2,10 @@ import data from "../data/data.json";
 import { useState } from "react";
 
 
-
-// const CohortList = () => {
-
-//     return <>{ListOfCohorts}</>
-// };
-
-const ViewInfo = () => {
-    return (
-        <>
-            <h2 className="view-info view-title" >All Students</h2>
-            <p className="view-info student-count">Total Students: <span className="green-text"> {data.length}</span></p>
-        </>
-    )
-};
-
-
-
 const CohortandStudentCards = () => {
 
+    const [viewTitle, setViewTitle] = useState("All Students");
+    const [studentCount, setStudentCount] = useState(data.length);
     const [studentCohort, setStudentCohort] = useState(data);
 
     const studentstoRender =
@@ -97,11 +82,15 @@ const CohortandStudentCards = () => {
     function clickedCohortEvent(clickedCohort) {
         if (clickedCohort === "All Students") {
             setStudentCohort(data);
+            setViewTitle("All Students");
+            setStudentCount(data.length);
         } else {
             const filteredCohort = data.filter((student) => {
                 return student.cohort.cohortCode === clickedCohort.replace(/\s/g, '');
             });
             setStudentCohort(filteredCohort);
+            setViewTitle(clickedCohort);
+            setStudentCount(filteredCohort.length);
         }
     }
 
@@ -120,7 +109,8 @@ const CohortandStudentCards = () => {
                 </div>
 
                 <section className="student-card-container">
-                    <ViewInfo />
+                    <h2 className="view-info view-title" >{viewTitle}</h2>
+                    <p className="view-info student-count">Total Students: <span className="green-text"> {studentCount}</span></p>
                     <div>
                         {studentstoRender}
                     </div>
