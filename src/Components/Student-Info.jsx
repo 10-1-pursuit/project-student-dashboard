@@ -67,10 +67,14 @@ const CohortandStudentCards = () => {
                         <section className="one-on-one-container">
                             <h4 className="one-on-one-title">1-on-1 Notes</h4>
                             <div className="comments-box">
+                                <div className="comments-box-top">
                                 <p className="commenter-name-element">Commenter Name</p>
-                                <input className="comments-input" type="text" placeholder="Add a comment..." />
+                                    <input className="comments-input" type="text" placeholder="" />
+                                </div>
+                                <div className="comments-box-middle">
                                 <p className="comment-element">Comment</p>
-                                <textarea className="comments-textarea" type="text" placeholder="Add a comment..." />
+                                    <textarea className="comments-textarea" type="text" placeholder="Add a comment..." />
+                                </div>
                                 <button className="comments-button">Add Note</button>
                             </div>
                             <div className="comments..."> {/* This is where the comments will go */}
