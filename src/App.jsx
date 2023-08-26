@@ -5,6 +5,7 @@ import { useState } from "react";
 import Header from "./Components/Header";
 import DisplayStudent from "./Components/Students";
 import SideBar from "./Components/SideBar";
+// import DisplayCohorts from "./Components/ShowMore/studentsDatails";
 
 function App() {
 

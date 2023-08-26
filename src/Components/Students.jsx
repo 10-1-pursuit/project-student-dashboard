@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 // import Showmore from "./ShowMore/showmore";
- import data from "../data/data.json"
+//  import data from "../data/data.json"
 
 
 function DisplayStudent({ studentList }) {
@@ -14,11 +14,11 @@ function DisplayStudent({ studentList }) {
 
   return (
     <section>
-      <div className="displayStudent-container">
+      <div className="displayStudent">
         <h2> All Students</h2>
         <p>
           Total Students : {""}
-          <span className="text-success">{studentList.length}</span>
+          <span>{studentList.length}</span>
         </p>
 
         {studentList.map(
@@ -41,7 +41,7 @@ function DisplayStudent({ studentList }) {
                     <p>
                       <span>{username}</span>
 
-                      <br></br>
+                      <br />
                       <span>Birthday: {FixingDob(dob)} </span>
                     </p>
                   </div>

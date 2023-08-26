@@ -27,6 +27,10 @@ header h1 {
     width: 125px;
     height: 150px;
 }
+/* .displayStudent p span{
+   color: crimson;
+} */
+
 .profile p span{
   position: relative;
  left: 20%;
