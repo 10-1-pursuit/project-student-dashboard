@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import StudentDetails from "./StudentDetails";
+// import StudentDetails from "./StudentDetails";
 import Comment from "./Comment";
 
 function Showmore({ codewars, certifications, cohort }) {

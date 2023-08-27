@@ -1,23 +1,25 @@
-// import React, { useState} from "react";
-// import data from "./data/data.json";
+import React from "react";
 
+function DisplayCohortCode({ cohortList, handleSortedClick, showAllStudents }) {
+  return (
+    <div className="displaycohort-container">
+      <h3>Choose a Class by Start Date</h3>
+      <div className="displaycohort-list" onClick={showAllStudents}>
+        All Students
+      </div>
+      {cohortList.map((element, index) => {
+        return (
+          <div
+            className="displaycohort-list"
+            key={index}
+            onClick={() => handleSortedClick(element.season, element.year)}
+          >
+            {element.season} {element.year}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
-//  function DisplayCohorts()  {
- 
-//      const [cohortArray, setCohortArray] = useState([]);
-
-
-// //      const cohortList = data.filter((item) => {
-// //       cohortArray.push (item.cohort.cohortCode)
-        
-// //    })
-     
-//     console.log(cohortList);
-    
-//      return <>
-     
-//             </>;
-            
-// }
-
-//     export default DisplayCohorts;
+export default DisplayCohortCode;
