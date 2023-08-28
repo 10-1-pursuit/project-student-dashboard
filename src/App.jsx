@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import data from "./data/data.json";
-import "./App.css"
+import "./App.css";
 import Header from "./Components/Header"
-import DisplayStudent from "./Component/DisplayStudent"
- import DisplayCohortCode from "./Component/DisplayCohortCode"
+import DisplayStudent from "./Components/DisplayStudent";
+import DisplayCohortCode from "./Components/DisplayCohortCode";
 
 
 function App() {

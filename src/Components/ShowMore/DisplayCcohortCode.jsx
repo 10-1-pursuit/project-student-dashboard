@@ -1,6 +1,6 @@
 import React from "react";
 
-function DisplayCohortCode({ cohortList, handleSortedClick, showAllStudents }) {
+function DisplayCcohortCode({ cohortList, handleSortedClick, showAllStudents }) {
   return (
     <div className="displaycohort-container">
       <h3>Choose a Class by Start Date</h3>

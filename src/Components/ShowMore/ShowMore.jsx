@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import StudentDetails from "./StudentDetails";
-import Comment from "./Comment";
+import Comment from "./Comments";
 
 function Showmore({ codewars, certifications, cohort }) {
   const [showMore, setshowMore] = useState(false);
