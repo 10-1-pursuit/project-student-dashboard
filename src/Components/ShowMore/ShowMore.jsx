@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import StudDetails from "./StudDetails"
 import Comment from "./Comments";
 
-function Showmore({ codewars, certifications, cohort }) {
+function ShowMore({ codewars, certifications, cohort }) {
   const [showMore, setshowMore] = useState(false);
 
   return (
@@ -29,4 +29,4 @@ function Showmore({ codewars, certifications, cohort }) {
   );
 }
 
-export default Showmore;
+export default ShowMore;
