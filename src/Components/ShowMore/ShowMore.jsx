@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import StudentDetails from "./StudentDetails";
+import StudDetails from "./StudDetails"
 import Comment from "./Comments";
 
 function Showmore({ codewars, certifications, cohort }) {
@@ -15,7 +15,7 @@ function Showmore({ codewars, certifications, cohort }) {
       <div>
         {showMore && (
           <>
-            <StudentDetails
+            <StudDetails
               codewars={codewars}
               certifications={certifications}
               cohort={cohort}

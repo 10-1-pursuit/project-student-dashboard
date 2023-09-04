@@ -50,19 +50,21 @@ function DisplayStudent({ studentList }) {
             certifications,
             cohort,
           }) => (
-            <div key={id} className="student-profile img-sm-start ">
-              <div className="photo">
+            <div key={id} className="student-profile .container-fluid  ">
+              <div className="photos">
                 <img src={profilePhoto} alt={preferredName} />
               </div>
-              <div className="profile .cotainer text-center .text-sm-start ">
-                <h3 className="name col-">
+              <div className="profile .container-fluid  ">
+                <h3 className="name .container-fluid  ">
                   {preferredName} {middleName[0]} {surname}
                 </h3>
                 <p>
                   <span>{username}</span>
                 </p>
                 <p>
-                  <span className="text-success ">Birthday: {FixingDob(dob)}</span>
+                  <span className="text-success ">
+                    Birthday: {FixingDob(dob)}
+                  </span>
                 </p>
                 <ShowMore
                   cohort={cohort}
@@ -70,7 +72,7 @@ function DisplayStudent({ studentList }) {
                   codewars={codewars}
                 />
               </div>
-              <p className="ontrack-to-graduate-container">
+              <p className="ontrack-to-graduate .container-fluid ">
                 {OntrackToGraduate(certifications, codewars) && (
                   <span className="text-success">On Track to Graduate</span>
                 )}

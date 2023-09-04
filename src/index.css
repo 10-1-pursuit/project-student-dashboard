@@ -24,8 +24,8 @@ header h1 {
   margin: 10px 10px; 
 } 
 .student-profile img{
-    width: 125px;
-    height: 150px;
+    width: 100%;
+    height: 100%;
 }
 /* .displayStudent p span{
    color: crimson;

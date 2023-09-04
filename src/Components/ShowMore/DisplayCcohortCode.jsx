@@ -22,4 +22,4 @@ function DisplayCcohortCode({ cohortList, handleSortedClick, showAllStudents }) 
   );
 }
 
-export default DisplayCohortCode;
+export default DisplayCcohortCode;
